@@ -112,7 +112,12 @@
                             title="Click on Restore, if you saved your blocks before">Restore
                         <i class="fa fa-download"></i></button>
                 </div>
-                <img class="ui medium circular image" src="https://media.giphy.com/media/zJ3V6Ot51H8Y0/giphy.gif" id="wave" style="display: none" data-title="Hello World">
+
+                <div>
+                    <img class="ui medium circular image" src="https://media.giphy.com/media/4NrK8grfVOOUVyW6Na/giphy.gif" id="apple" style="width: 100px; height: 100px; display: none" data-title="Hello World">
+                    <img class="ui medium circular image" src="https://media.giphy.com/media/ivSCbBQjwLz7q/giphy.gif" id="banana" style="width: 100px; height: 100px; display: none" data-title="Hello World">
+                    <img class="ui medium circular image" src="https://media.giphy.com/media/1iqei6XMIFEZv7baTL/giphy.gif" id="orange" style="width: 100px; height: 100px; display: none" data-title="Hello World">
+                </div>
             </div>
         </div>
 
@@ -171,19 +176,15 @@
         Blockly.JavaScript.INFINITE_LOOP_TRAP =
             'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
         var code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
-        Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
-        if (code === 'if (6 * 7 == 42) {\n' +
-            '  window.alert(\'Hello World\');\n' +
-            '} else {\n' +
-            '  window.alert(\'Panic\');\n' +
-            '}\n') {
-            $('#alert').hide();
-            $('#wrong').hide();
-            document.getElementById("wave").style.display="block";
-            $('#nextalert').show();
-        }else {
-            $('#alert').hide();
-            $('#wrong').show();
+        console.log(code);
+        if(code === "var Fruits;\n" +
+            "\n" +
+            "\n" +
+            "Fruits = ['Apple', 'Oranges', 'Bananas'];\n" +
+            "window.alert(Fruits);\n"){
+            document.getElementById("apple").style.display = "block";
+            document.getElementById("banana").style.display = "block";
+            document.getElementById("orange").style.display = "block";
         }
     }
 
