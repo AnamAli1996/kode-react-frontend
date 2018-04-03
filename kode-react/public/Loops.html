@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loops</title>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <script src="Blockly/popup.js"></script>
+    <script src="Blockly/blockly_compressed.js"></script>
+    <script src="Blockly/blocks_compressed.js"></script>
+    <script src="Blockly/en.js"></script>
+    <script src="Blockly/javascript_compressed.js"></script>
+    <script src="Blockly/storage.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+    <script src="Blockly/tooltip.js"></script>
+    <link rel="stylesheet" type="text/css" href="BlocklyCSS.css">
+</head>
+<body>
+
+<!-- nav -->
+<nav class="nav">
+    <div style="display:table-cell; vertical-align:middle; text-align:center">
+        <img src="Blockly/logo.png" width= "160px" height= "100px" >
+    </div>
+</nav>
+
+<!-- instructions -->
+<div id= "alert" class="alert alert-primary" role="alert" style="width: 700px; margin-left: 500px;">
+        Bring the Cookie Monster to his Cookie using loop.
+    <img src="https://media.giphy.com/media/10LS3TuIUoBAWc/giphy.gif" width= "50px" height= "40px" >
+</div>
+
+<div id= "nextalert" class="alert alert-danger collapse" role="alert">
+    WHERE ARE MY COOKIESSS
+    <img src="https://media.giphy.com/media/l4FGoufx1Ny4jDc1q/giphy.gif" width= "50px" >
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+
+            <!-- Buttons -->
+            <div class="runbutton">
+                <button type="button" class="btn btn-success custom" data-toggle="tooltip" data-placement="auto"
+                        title="Use 'repeat until' Block to move the Cookie Monster forward until he reaches the pin!" >Hint
+                    <i class="fa fa-question"></i></button>
+            </div>
+
+            <div class="runbutton">
+                <button type="button" class="btn btn-success custom"
+                        onclick="runCode()">
+                    Run <i class="fa fa-play-circle"></i></i>
+                </button>
+            </div>
+
+            <div class="runbutton">
+                <button type="button" class="btn btn-success custom" onclick="next()">
+                    Next <i class="fa fa-forward"></i></button>
+            </div>
+
+            <div class="runbutton">
+                <button type="button" class="btn btn-success custom" data-toggle="tooltip" data-placement="auto"
+                        title="Click to save your work" onclick="saveWorkspace()">Save
+                    <i class="fa fa-save 2x"></i></button>
+            </div>
+
+            <div class="runbutton">
+                <button type="button" class="btn btn-success custom" onclick="loadWorkspace()" data-toggle="tooltip" data-placement="auto"
+                        title="Click on Restore, if you saved your blocks before">Restore
+                    <i class="fa fa-download"></i></button>
+            </div>
+
+            <!--canvas -->
+            <div id = "container">
+                <div id= "road"></div>
+                <div id="monster"></div>
+                <div id="pin"></div>
+            </div>
+        </div>
+        <br/>
+        <div id="blocklyDiv" style="height: 300px; width: 600px; margin-right: 200px"></div>
+    </div>
+</div>
+
+<xml id= "toolbox" style="display: none;">
+
+    <category name="Logic">
+        <block type="do"></block>
+        <block type="move_forward"></block>
+    </category>
+</xml>
+
+<!-- Popup -->
+<div id="dropElem">
+    <div id="dropContent">
+        <div id="dropClose">X</div>
+        <div> <img src="Blockly/logo.png" width= "160px" height= "100px" style="margin-left: 200px">  </div>
+        <p style="font-family: Verdana, sans-serif; text-align: center"> You saved Pickachu! </p>
+        <div>
+            <p style="font-family: Verdana, sans-serif; text-align: center"> Now let's bring Cookie Monster to its Cookie.</p>
+            <p style="font-family: Verdana, sans-serif; text-align: center">We will now start using Loops.</p>
+            <p style="font-family: Verdana, sans-serif;text-align: center ">Loops repeat the code until a process is completed</p>
+            <p style="font-family: Verdana, sans-serif; text-align: center">In our case, we want to ask Cookie Monster to move forward until he reaches the Cookie!</p>
+            <p style="font-family: Verdana, sans-serif; text-align: center"> Let's try it! Repeat moving forward until Cookie Monster reaches the Cookie. </p>
+            <p style="font-family: Verdana, sans-serif; text-align: center">               repeat until Cookie { </p>
+            <p style="font-family: Verdana, sans-serif; text-align: center">                           move </p>
+            <p style="font-family: Verdana, sans-serif; text-align: center">                           }</p>
+            <img src="https://media.giphy.com/media/UzzPg9BGIgwMw/giphy.gif" width= "160px"  style="margin-left: 200px; margin-bottom: 30px" >
+
+            <p> PS. If you are stuck click on Hint!</p>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+
+    var demoWorkspace = Blockly.inject('blocklyDiv',
+        {toolbox: document.getElementById('toolbox')});
+
+    function runCode(){
+        var xml = Blockly.Xml.workspaceToDom(demoWorkspace);
+        window.LoopTrap = 1000;
+        Blockly.JavaScript.INFINITE_LOOP_TRAP =
+            'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
+        let code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+        console.log(code);
+        Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+
+        if(xml.innerHTML.length === 182){
+           run();}
+           else {
+            $('#nextalert').show();
+            $('#alert').hide();
+    }
+    }
+
+
+
+    Blockly.Blocks['do'] = {
+        init: function() {
+            this.appendDummyInput()
+                .appendField("repeat until ")
+                .appendField(new Blockly.FieldImage("https://media.giphy.com/media/l0Iyfxx9k3V5nV1Oo/giphy.gif", 15, 15, "*"));
+            this.appendStatementInput("do")
+                .setCheck(null)
+                .appendField("do");
+            this.setInputsInline(true);
+            this.setPreviousStatement(true, null);
+            this.setNextStatement(true, null);
+            this.setColour(180);
+            this.setTooltip("");
+            this.setHelpUrl("");
+        }
+    };
+
+    Blockly.JavaScript['do'] = function(block) {
+        var statements_do = Blockly.JavaScript.statementToCode(block, 'do');
+        // TODO: Assemble JavaScript into code variable.
+        var code = "do loop";
+        return code;
+    };
+
+    Blockly.Blocks['move_forward'] = {
+        init: function () {
+            this.appendDummyInput()
+                .appendField("move forward");
+            this.setPreviousStatement(true);
+            this.setColour(230);
+            this.setTooltip("");
+            this.setHelpUrl("");
+        }
+    };
+
+    Blockly.JavaScript['move_forward'] = function(block) {
+        // TODO: Assemble JavaScript into code variable.
+        let code = "myMoveForward();";
+        return code;
+    };
+
+    function run() {
+        myMove();
+    }
+
+
+    function next() {
+
+        var xml = Blockly.Xml.workspaceToDom(demoWorkspace);
+        if(xml.innerHTML.length === 182){
+            window.location.href="pokemon.html";
+        }else {
+            $('#nextalert').show();
+            $('#alert').hide();
+        }
+    }
+
+
+    function saveWorkspace() {
+        var xmlDom = Blockly.Xml.workspaceToDom(Blockly.mainWorkspace);
+        var xmlText = Blockly.Xml.domToPrettyText(xmlDom);
+        localStorage.setItem("blockly.xml", xmlText);
+    }
+
+    function loadWorkspace() {
+        var xmlText = localStorage.getItem("blockly.xml");
+        if (xmlText) {
+            Blockly.mainWorkspace.clear();
+            xmlDom = Blockly.Xml.textToDom(xmlText);
+            Blockly.Xml.domToWorkspace(Blockly.mainWorkspace, xmlDom);
+        }
+    }
+
+    function myMove() {
+        var elem = document.getElementById("monster");
+        var pos = 0;
+        var id = setInterval(frame, 5);
+        function frame() {
+            if (pos === 350) {
+                clearInterval(id);
+            } else {
+                pos++;
+                elem.style.left = pos + 'px';
+            }
+        }
+    }
+</script>
+</body>
+</html>

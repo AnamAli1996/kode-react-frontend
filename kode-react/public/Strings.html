@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Strings</title>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <script src="Blockly/popup.js"></script>
+    <script src="Blockly/blockly_compressed.js"></script>
+    <script src="Blockly/blocks_compressed.js"></script>
+    <script src="Blockly/en.js"></script>
+    <script src="Blockly/javascript_compressed.js"></script>
+    <script src="Blockly/storage.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+    <script src="Blockly/tooltip.js"></script>
+    <link rel="stylesheet" type="text/css" href="BlocklyCSS.css">
+</head>
+<body>
+
+<!-- nav -->
+<nav class="nav">
+    <div style="display:table-cell; vertical-align:middle; text-align:center">
+        <img src="Blockly/logo.png" width= "160px" height= "100px" >
+    </div>
+</nav>
+
+<!-- instructions -->
+<div id= "alert" class="alert alert-primary" role="alert">
+    Enter your name by clicking on 'name' and entering your name.
+</div>
+
+<div id= "nextalert" class="alert alert-danger collapse" role="alert">
+    You haven't entered your name yet!
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <!-- Buttons -->
+            <div class="runbutton">
+                <button type="button" class="btn btn-success custom" data-toggle="tooltip" data-placement="auto"
+                        title="Drag the Blocks from the logic section and see how many steps does it take the cat to reach it's food!" >Hint
+                    <i class="fa fa-question"></i></button>
+            </div>
+
+            <div class="runbutton">
+                <button type="button" class="btn btn-success custom"
+                        onclick="runCode()">
+                    Run <i class="fa fa-play-circle"></i></i>
+                </button>
+            </div>
+
+            <div class="runbutton">
+                <button type="button" class="btn btn-success custom" onclick="next()">
+                    Next <i class="fa fa-forward"></i></button>
+            </div>
+
+            <div class="runbutton">
+                <button type="button" class="btn btn-success custom" data-toggle="tooltip" data-placement="auto"
+                        title="Click to save your work" onclick="saveWorkspace()">Save
+                    <i class="fa fa-save 2x"></i></button>
+            </div>
+
+            <div class="runbutton">
+                <button type="button" class="btn btn-success custom" onclick="loadWorkspace()" data-toggle="tooltip" data-placement="auto"
+                        title="Click on Restore, if you saved your blocks before">Restore
+                    <i class="fa fa-download"></i></button>
+            </div>
+        </div>
+        <div id="blocklyDiv" style="height: 300px; width: 600px; margin-right: 200px"></div>
+    </div>
+</div>
+
+<!-- Popup -->
+<div id="dropElem">
+    <div id="dropContent">
+        <div id="dropClose">X</div>
+        <div> <img src="Blockly/logo.png" width= "160px" height= "100px" style="margin-left: 200px">  </div>
+        <p style="font-family: Verdana, sans-serif; text-align: center">Thank you for bringing Cookie Monster to it's cookies</p>
+        <div>
+            <p style="font-family: Verdana, sans-serif; text-align: center">Now let's talk Strings.</p>
+            <p style="font-family: Verdana, sans-serif; text-align: center">Strings are like list of characters that make up a word. </p>
+            <p style="font-family: Verdana, sans-serif;text-align: center ">Like you name, that's a String!</p>
+            <p style="font-family: Verdana, sans-serif; text-align: center">To create a String, click on the 'Name' drop down and click on 'Rename variable'</p>
+            <p style="font-family: Verdana, sans-serif; text-align: center">Then write your name!</p>
+            <img src="https://media.giphy.com/media/Cdac0wWIT1xBu/giphy.gif"  style="margin-left: 200px; margin-bottom: 30px" >
+
+            <p> PS. If you are stuck click on Hint!</p>
+        </div>
+    </div>
+</div>
+
+<xml id="toolbox" style="display: none;">
+    <category name="Strings">
+    <block type="string">
+        <field name="NAME">name</field>
+    </block>
+    </category>
+</xml>
+</body>
+
+
+<script>
+
+    let demoWorkspace = Blockly.inject('blocklyDiv',
+        {toolbox: document.getElementById('toolbox')});
+
+    function runCode(){
+        window.LoopTrap = 1000;
+        Blockly.JavaScript.INFINITE_LOOP_TRAP =
+            'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
+        var code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+        Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+       if(code === 'name'){
+           $('#alert').hide();
+           $('#nextalert').show();
+       }else {
+           let url = "https://media.giphy.com/media/EpV0leZbegKkM/giphy.gif";
+           bootbox.alert({
+               message: "Hello " + code +
+               "<br/><img src='" + url + "' height='500px' width='470px' >",
+           });
+       }
+    }
+
+        Blockly.Blocks['string'] = {
+        init: function() {
+            this.appendValueInput("NAME")
+                .setCheck("String")
+                .appendField("Please enter your name")
+                .appendField(new Blockly.FieldTextInput("your name"), "NAME")
+                .appendField("here");
+            this.setColour(330);
+            this.setTooltip("");
+            this.setHelpUrl("");
+        }
+    };
+
+    Blockly.JavaScript['string'] = function(block) {
+        var text_name = block.getFieldValue('NAME');
+        var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+        console.log(text_name);
+        console.log(value_name);
+        var code = text_name;
+        return code;
+    };
+
+    function next() {
+        let code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+        if(code !== 'name'){
+            window.location.href="pokemon.html";
+        }else {
+            $('#nextalert').show();
+            $('#alert').hide();
+        }
+    }
+
+    function saveWorkspace() {
+        var xmlDom = Blockly.Xml.workspaceToDom(Blockly.mainWorkspace);
+        var xmlText = Blockly.Xml.domToPrettyText(xmlDom);
+        localStorage.setItem("blockly.xml", xmlText);
+    }
+
+    function loadWorkspace() {
+        var xmlText = localStorage.getItem("blockly.xml");
+        if (xmlText) {
+            Blockly.mainWorkspace.clear();
+            xmlDom = Blockly.Xml.textToDom(xmlText);
+            Blockly.Xml.domToWorkspace(Blockly.mainWorkspace, xmlDom);
+        }
+    }
+
+
+</script>
+</html>

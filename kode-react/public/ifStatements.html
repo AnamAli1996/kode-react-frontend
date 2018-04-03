@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+        <title>If Statements</title>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <script src="Blockly/popup.js"></script>
+    <script src="Blockly/blockly_compressed.js"></script>
+    <script src="Blockly/blocks_compressed.js"></script>
+    <script src="Blockly/en.js"></script>
+    <script src="Blockly/javascript_compressed.js"></script>
+    <script src="Blockly/storage.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+    <script src="Blockly/tooltip.js"></script>
+    <link rel="stylesheet" type="text/css" href="BlocklyCSS.css">
+</head>
+<body>
+
+<!-- nav -->
+<nav class="nav">
+    <div style="display:table-cell; vertical-align:middle; text-align:center">
+        <img src="Blockly/logo.png" width= "160px" height= "100px" >
+    </div>
+</nav>
+
+<!-- instructions -->
+<div id= "alert" class="alert alert-primary" role="alert" style="width: 1000px; margin-left: 300px;">
+    <p>  Click on the instructions to see what you have to do!</p>
+</div>
+<div id= "nextalert" class="alert alert-danger collapse" role="alert">
+    Are you sure your if statement is correct?
+</div>
+
+
+<div id="dropElem">
+    <div id="dropContent">
+        <div id="dropClose">X</div>
+        <div> <img src="Blockly/logo.png" width= "160px" height= "100px" style="margin-left: 200px">  </div>
+        <p style="font-family: Verdana, sans-serif; text-align: center">Well Done, you know your numbers! </p>
+        <div>
+            <p style="font-family: Verdana, sans-serif; text-align: center">Let's finish this last exercise!</p>
+            <p style="font-family: Verdana, sans-serif; text-align: center">We will learn about If Statements!</p>
+            <p style="font-family: Verdana, sans-serif;text-align: center ">If Statements check to see if something is true or false!</p>
+            <p style="font-family: Verdana, sans-serif; text-align: center">For example, If  <img src="Blockly/apple.png" width= "30px" height= "30x"> is red then eat it </p>
+            <p style="font-family: Verdana, sans-serif; text-align: center">In this case, my apple is red! So I will eat it But what happens if my apple was green? I didn't give any instructions for that! </p>
+            <p style="font-family: Verdana, sans-serif; text-align: center">For this, you can do else. If the apple wasn't red, then I would not eat it! </p>
+            <p style="font-family: Verdana, sans-serif; text-align: center"> if(apple is red){ </p>
+            <p style="font-family: Verdana, sans-serif; text-align: center"> then eat the apple </p>
+            <p style="font-family: Verdana, sans-serif; text-align: center"> }else </p>
+            <p style="font-family: Verdana, sans-serif; text-align: center"> Don't eat the apple </p>
+            <img src="https://media.giphy.com/media/4NrK8grfVOOUVyW6Na/giphy.gif"  style="height: 170px; margin-left: 200px; margin-bottom: 30px" >
+
+            <p> PS. If you are stuck click on Hint!</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <!-- Buttons -->
+            <div class="runbutton" style="margin-left: 90px">
+                <button type="button" class="btn btn-success custom" data-toggle="tooltip" data-placement="auto"
+                        title="<p><img src='https://media.giphy.com/media/3ohhwBfx3ik9jIVTOM/giphy.gif'
+                style='width: 30px; height: 30px;' >Drag the if block to your workspace <img src='Blockly/if/if.png'  style='width: 60px; height: 60px;' > </p>">
+                    Hint
+                    <i class="fa fa-question"></i></button>
+            </div>
+
+            <div class="runbutton" style="margin-left: 90px">
+                <button type="button" class="btn btn-success custom"
+                        onclick="runCode()">
+                    Run <i class="fa fa-play-circle"></i></i>
+                </button>
+            </div>
+
+            <div class="runbutton" style="margin-left: 90px">
+                <button type="button" class="btn btn-success custom"
+                        onclick="showInstructions()">
+                    Instructions <i class="fa fa-search-plus"></i>
+                </button>
+            </div>
+
+            <div class="runbutton" style="margin-left: 90px">
+                <button type="button" class="btn btn-success custom" onclick="next()">
+                    Next <i class="fa fa-forward"></i></button>
+            </div>
+
+            <div class="runbutton" style="margin-left: 90px">
+                <button type="button" class="btn btn-success custom" data-toggle="tooltip" data-placement="auto"
+                        title="Click to save your work" onclick="saveWorkspace()">Save
+                    <i class="fa fa-save 2x"></i></button>
+            </div>
+
+            <div class="runbutton" style="margin-left: 90px">
+                <button type="button" class="btn btn-success custom" onclick="loadWorkspace()" data-toggle="tooltip"
+                        data-placement="auto"
+                        title="Click on Restore, if you saved your blocks before">Restore
+                    <i class="fa fa-download"></i></button>
+            </div>
+        </div>
+        <div id="blocklyDiv" style="height: 500px; width: 700px; margin-right: 100px"></div>
+    </div>
+</div>
+
+
+<xml id="toolbox" style="display: none;">
+    <block type="controls_if"></block>
+    <block type="logic_compare">
+        <field name="OP">EQ</field>
+    </block>
+    <block type="math_arithmetic">
+        <field name="OP">ADD</field>
+        <value name="A">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+        <value name="B">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="math_number">
+        <field name="NUM">2</field>
+    </block>
+    <block type="text_print">
+        <value name="TEXT">
+            <block type="text">
+                <field name="TEXT">Hello World</field>
+            </block>
+        </value>
+    </block>
+    <block type="text_print">
+        <value name="TEXT">
+            <block type="text">
+                <field name="TEXT">Goodbye World</field>
+            </block>
+        </value>
+    </block>
+</xml>
+
+</body>
+
+<script>
+    let codeTrue = false;
+    function showInstructions() {
+        let instructions = "<p><img src=\"https://media.giphy.com/media/l46ClbXIcjbTyeQla/giphy.gif\" style=\"width: 30px; height: 30px;\" >Drag the if block to your workspace " +
+            "<img src=\"Blockly/if/if.png\"  style=\"width: 60px; height: 60px;\" > </p> " +
+            "<p><img src=\"https://media.giphy.com/media/l46ClbXIcjbTyeQla/giphy.gif\" style=\"width: 30px; height: 30px;\" >Click on the settings button <img src=\"Blockly/if/settings.png\"  style=\"width: 30px; height: 30px;\" > </p>" +
+            "<p><img src=\"https://media.giphy.com/media/l46ClbXIcjbTyeQla/giphy.gif\" style=\"width: 30px; height: 30px;\" >You will see the following options.<img src=\"Blockly/if/optionSettings.png\"  style=\" height: 60px;\" >  </p>" +
+            "<p><img src=\"https://media.giphy.com/media/l46ClbXIcjbTyeQla/giphy.gif\" style=\"width: 30px; height: 30px;\" >Drag else block and join it with the if block <img src=\"Blockly/if/ifelse.png\" style=\"height: 60px;\"> </p>" +
+            "<p><img src=\"https://media.giphy.com/media/l46ClbXIcjbTyeQla/giphy.gif\" style=\"width: 30px; height: 30px;\" >Drag the '=' block and place it beside the if block. <img src=\"Blockly/if/emptyEquals.png\"  style=\"height: 30px\"></p>" +
+            "<p><img src=\"https://media.giphy.com/media/l46ClbXIcjbTyeQla/giphy.gif\" style=\"width: 30px; height: 30px;\" >Add 1 + 1 block in the first puzzle <img src=\"Blockly/if/One+One.png\"  style=\" height: 30px\"> and then '2' block in to the other   <img src=\"Blockly/if/Empty.png\"  style=\" height: 30px\"></p>"+
+            "<p><img src=\"https://media.giphy.com/media/l46ClbXIcjbTyeQla/giphy.gif\" style=\"width: 30px; height: 30px;\" >Drag the 'Hello World' block and put it the if block and 'Goodbye World' in the else block </p>" +
+            "<p><img src=\"https://media.giphy.com/media/l46ClbXIcjbTyeQla/giphy.gif\" style=\"width: 30px; height: 30px;\" >Hit Run</p>"
+        bootbox.alert({
+            message: instructions
+        });
+    }
+
+
+    let demoWorkspace = Blockly.inject('blocklyDiv',
+        {toolbox: document.getElementById('toolbox')});
+
+    function runCode(){
+        window.LoopTrap = 1000;
+        Blockly.JavaScript.INFINITE_LOOP_TRAP =
+            'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
+        var code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+        Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+        console.log(code);
+        try{
+            eval(code);
+            codeTrue = true;
+        }catch(e){
+            alert(e);
+        }
+    }
+
+    function next() {
+        let code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+        if(codeTrue === true){
+            window.location.href="end.html";
+        }else {
+            $('#nextalert').show();
+            $('#alert').hide();
+        }
+    }
+
+    function saveWorkspace() {
+        var xmlDom = Blockly.Xml.workspaceToDom(Blockly.mainWorkspace);
+        var xmlText = Blockly.Xml.domToPrettyText(xmlDom);
+        localStorage.setItem("blockly.xml", xmlText);
+    }
+
+    function loadWorkspace() {
+        var xmlText = localStorage.getItem("blockly.xml");
+        if (xmlText) {
+            Blockly.mainWorkspace.clear();
+            xmlDom = Blockly.Xml.textToDom(xmlText);
+            Blockly.Xml.domToWorkspace(Blockly.mainWorkspace, xmlDom);
+        }
+    }
+</script>
+</html>

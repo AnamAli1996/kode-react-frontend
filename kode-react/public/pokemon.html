@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <script src="Blockly/popup.js"></script>
+    <title>Pokemon</title>
+    <script src="Blockly/blockly_compressed.js"></script>
+    <script src="Blockly/blocks_compressed.js"></script>
+    <script src="Blockly/en.js"></script>
+    <script src="Blockly/javascript_compressed.js"></script>
+    <script src="Blockly/storage.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+    <script src="Blockly/tooltip.js"></script>
+    <link rel="stylesheet" type="text/css" href="BlocklyCSS.css">
+</head>
+
+<body>
+
+<!-- nav bar -->
+<nav class="nav">
+    <div style="display:table-cell; vertical-align:middle; text-align:center">
+        <img src="Blockly/logo.png" width= "160px" height= "100px" >
+    </div>
+</nav>
+
+<!-- instructions -->
+<div id= "alert" class="alert alert-primary" role="alert">
+    <img src="https://media.giphy.com/media/yAiJ6byq08TaU/giphy.gif" width= "50px" height= "40px" >
+    Bring Pikachu to Ash.
+</div>
+
+<div id= "nextalert" class="alert alert-danger collapse" role="alert">
+    <img src="https://media.giphy.com/media/Hg0mAnZV1lrLG/giphy.gif" width= "50px" height= "40px" >
+    Pickachu is still not with Ash
+</div>
+
+<!-- container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+
+            <!-- Buttons -->
+            <div class="runbutton">
+                <button type="button" class="btn btn-success custom" data-toggle="tooltip" data-placement="auto"
+                        title="Drag blocks from the Logic section and give instructions to pickachu to go to Ash!" >Hint
+                    <i class="fa fa-question"></i></button>
+            </div>
+
+            <div class="runbutton">
+                <button type="button" class="btn btn-success custom"
+                        onclick="runCode()">
+                    Run <i class="fa fa-play-circle"></i></i>
+                </button>
+            </div>
+
+            <div class="runbutton">
+                <button type="button" class="btn btn-success custom" onclick="next()">
+                    Next <i class="fa fa-forward"></i></button>
+            </div>
+
+            <div class="runbutton">
+                <button type="button" class="btn btn-success custom" data-toggle="tooltip" data-placement="auto"
+                        title="Click to save your work" onclick="saveWorkspace()">Save
+                    <i class="fa fa-save 2x"></i></button>
+            </div>
+
+            <div class="runbutton">
+                <button type="button" class="btn btn-success custom" onclick="loadWorkspace()" data-toggle="tooltip" data-placement="auto"
+                        title="Click on Restore, if you saved your blocks before">Restore
+                    <i class="fa fa-download"></i></button>
+            </div>
+
+            <!-- Animation -->
+            <div id = "container">
+                <div id= "animate1"></div>
+                <div id= "animate2"></div>
+                <div id= "v1"></div>
+                <hr id="hr1" />
+                <hr id="hr2" />
+            </div>
+        </div>
+        <div id="blocklyDiv" style="height: 300px; width: 600px; margin-right: 200px"></div>
+    </div>
+</div>
+
+<div id="dropElem">
+    <div id="dropContent">
+        <div id="dropClose">X</div>
+        <div> <img src="Blockly/logo.png" width= "160px" height= "100px" style="margin-left: 200px">  </div>
+        <p style="font-family: Verdana, sans-serif; text-align: center">Well Done! The cat was super delighted with its food! </p>
+        <div>
+            <p style="font-family: Verdana, sans-serif; text-align: center"> Lets make this even harder!</p>
+            <p style="font-family: Verdana, sans-serif; text-align: center">Pickachu needs you help to get to Ash!</p>
+            <p style="font-family: Verdana, sans-serif;text-align: center ">But this time Pickachu can't just go straight! He has more choices!</p>
+            <p style="font-family: Verdana, sans-serif; text-align: center">This time you will use three lines of code!</p>
+            <p style="font-family: Verdana, sans-serif; text-align: center">You can use the blocks again this time! Just follow the black line
+                                                                                that will bring Pikachu to Ash! </p>
+            <img src="https://media.giphy.com/media/bA3VQOyhunpcI/giphy.gif" height= "190px" style="margin-left: 200px; margin-bottom: 30px" >
+
+            <p> PS. If you are stuck click on Hint!</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<xml id= "toolbox" style="display: none;">
+
+    <category name="Logic">
+        <block type="move_forward"></block>
+        <block type="move_up"></block>
+    </category>
+</xml>
+
+
+<script>
+
+    var demoWorkspace = Blockly.inject('blocklyDiv',
+        {toolbox: document.getElementById('toolbox')});
+
+    function runCode(){
+        window.LoopTrap = 1000;
+        Blockly.JavaScript.INFINITE_LOOP_TRAP =
+            'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
+       let code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+        console.log(code);
+
+
+        Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+        try {
+            run();
+        } catch (e) {
+            alert(e);
+        }
+    }
+
+    Blockly.Blocks['move_forward'] = {
+        init: function () {
+            this.appendDummyInput()
+                .appendField("move forward");
+            this.setPreviousStatement(true);
+            this.setNextStatement(true);
+            this.setColour(230);
+            this.setTooltip("");
+            this.setHelpUrl("");
+        }
+    };
+
+    Blockly.JavaScript['move_forward'] = function(block) {
+        // TODO: Assemble JavaScript into code variable.
+         let code = "myMoveForward();";
+        return code;
+    };
+
+    Blockly.Blocks['move_up'] = {
+        init: function () {
+            this.appendDummyInput()
+                .appendField("move up");
+            this.setPreviousStatement(true);
+            this.setNextStatement(true);
+            this.setColour(180);
+            this.setTooltip("");
+            this.setHelpUrl("");
+        }
+    };
+
+    Blockly.JavaScript['move_up'] = function(block) {
+        // TODO: Assemble JavaScript into code variable.
+      let code = "myMoveUp();";
+        return code;
+    };
+
+    function run() {
+        var Jscode = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+        console.log(Jscode);
+
+        if(Jscode === "myMoveForward();myMoveUp();myMoveForward();"){
+            console.log("HERE");
+            myMoveForward();
+            myMoveUp();
+            myMoveForward2();
+        }else
+            $('#nextalert').show();
+             $('#alert').hide();
+    }
+
+    function next() {
+        var Jscode = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+        if(Jscode === "myMoveForward();myMoveUp();myMoveForward();"){
+            window.location.href="loops.html";
+        }else {
+            $('#nextalert').show();
+            $('#alert').hide();
+        }
+    }
+
+
+
+    function myMoveForward() {
+        let elem = document.getElementById("animate1");
+
+
+                elem.style.left = 140 + 'px';
+                console.log(elem.style.left)
+    }
+
+    function myMoveForward2() {
+        let elem = document.getElementById("animate1");
+
+
+        elem.style.left = 280 + 'px';
+        console.log(elem.style.left)
+    }
+
+
+    function myMoveUp() {
+        let elem = document.getElementById("animate1");
+        let pos = elem.style.left;
+        console.log(pos);
+            if(elem.style.left === "140px"){
+                console.log(elem.style.left);
+                elem.style.top = 70+ 'px';
+            }
+
+    }
+
+
+    function saveWorkspace() {
+        var xmlDom = Blockly.Xml.workspaceToDom(Blockly.mainWorkspace);
+        var xmlText = Blockly.Xml.domToPrettyText(xmlDom);
+        localStorage.setItem("blockly.xml", xmlText);
+    }
+
+    function loadWorkspace() {
+        var xmlText = localStorage.getItem("blockly.xml");
+        if (xmlText) {
+            Blockly.mainWorkspace.clear();
+            xmlDom = Blockly.Xml.textToDom(xmlText);
+            Blockly.Xml.domToWorkspace(Blockly.mainWorkspace, xmlDom);
+        }
+    }
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Traffic Lights</title>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <script src="Blockly/popup.js"></script>
+    <script src="Blockly/blockly_compressed.js"></script>
+    <script src="Blockly/blocks_compressed.js"></script>
+    <script src="Blockly/en.js"></script>
+    <script src="Blockly/javascript_compressed.js"></script>
+    <script src="Blockly/storage.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="BlocklyCSS.css">
+</head>
+<body>
+<xml id="toolbox" style="display: none;">
+    <sep></sep>
+    <sep></sep>
+    <category name="Math" colour="#5C68A6">
+        <block type="math_number">
+            <field name="NUM">0</field>
+        </block>
+    </category>
+    <sep></sep>
+    <category name="Shape">
+        <block type="circle">
+            <field name="NAME">#ff0000</field>
+        </block>
+        <block type="rectangle"></block>
+    </category>
+</xml>
+
+<!-- nav -->
+<nav class="nav">
+    <div style="display:table-cell; vertical-align:middle; text-align:center">
+        <img src="Blockly/logo.png" width= "160px" height= "100px" >
+    </div>
+</nav>
+
+<!-- instructions -->
+<div id= "alert" class="alert alert-primary" role="alert">
+    <img src="https://media.giphy.com/media/11j83b6mlIpWdq/giphy.gif" width= "30px" height= "30px" >
+    Lets create a traffic light!
+    Read instructions for more details.
+</div>
+
+<!-- container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+
+            <!-- Buttons -->
+            <div class="runbutton">
+                <button type="button" class="btn btn-success custom" data-toggle="tooltip" data-placement="auto"
+                        title="Drag the Block from the logic section and click on run to see what happens! Make sure to click on off before proceeding to Next!" >Hint
+                    <i class="fa fa-question"></i></button>
+            </div>
+
+            <div class="runbutton">
+                <button type="button" class="btn btn-success custom"
+                        onclick="runCode()">
+                    Run <i class="fa fa-play-circle"></i></i>
+                </button>
+            </div>
+
+            <div class="runbutton">
+                <button type="button" class="btn btn-success custom" onclick="next()">
+                    Next <i class="fa fa-forward"></i></button>
+            </div>
+
+            <div class="runbutton">
+                <button type="button" class="btn btn-success custom" data-toggle="tooltip" data-placement="auto"
+                        title="Click to save your work" onclick="saveWorkspace()">Save
+                    <i class="fa fa-save 2x"></i></button>
+            </div>
+
+            <div class="runbutton">
+                <button type="button" class="btn btn-success custom" onclick="loadWorkspace()" data-toggle="tooltip" data-placement="auto"
+                        title="Click on Restore, if you saved your blocks before">Restore
+                    <i class="fa fa-download"></i></button>
+            </div>
+
+            <!--canvas -->
+            <canvas id="myCanvas" width="600" height="300" style="border:1px solid #000000;"> </canvas>
+        </div>
+        <br/>
+
+        <!-- Blockly Div -->
+        <div id="wrapper">
+            <div id="blocklyDiv" style="height: 300px; width: 600px;"></div>
+            <br>
+        </div>
+
+        <!-- Popup -->
+        <div id="dropElem">
+            <div id="dropContent">
+                <div id="dropClose">X</div>
+                <div> <img src="Blockly/logo.png" width= "160px" height= "100px" style="margin-left: 200px">  </div>
+                <p style="font-family: Verdana, sans-serif; text-align: center">Well Done! You are on level two! </p>
+                <div>
+                    <p style="font-family: Verdana, sans-serif; text-align: center"> Lets draw a circle and color it red! </p>
+                    <p style="font-family: Verdana, sans-serif; text-align: center"> To change the color of the Circle, we use CSS </p>
+                    <p style="font-family: Verdana, sans-serif;text-align: center ">CSS can change the way how things look on our page! Lets try it!</p>
+                    <img src="https://media.giphy.com/media/Bn6djQ6MgEWZi/giphy.gif" width= "160px" height= "160px" style="margin-left: 200px; margin-bottom: 30px" >
+
+                    <div><p> PS. If you are stuck click on Hint!</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>
+
+    function drawCanvas() {
+        var canvas = document.getElementById('myCanvas');
+        var context = canvas.getContext('2d');
+
+        context.clearRect(0, 0, 600, 300);
+
+        ctx.beginPath();
+        ctx.arc(200, 75, 20, 0, 2 * Math.PI);
+        ctx.stroke();
+
+
+        ctx.beginPath();
+        ctx.arc(200, 130, 20, 0, 2 * Math.PI);
+        ctx.stroke();
+
+
+        ctx.beginPath();
+        ctx.arc(200, 185, 20, 0, 2 * Math.PI);
+        ctx.stroke();
+
+
+        ctx.rect(150,20,100,200);
+        ctx.stroke();
+    }
+
+
+    var c1 = document.getElementById("myCanvas");
+    var ctx = c1.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(200, 75, 20, 0, 2 * Math.PI);
+    ctx.stroke();
+
+    var c2 = document.getElementById("myCanvas");
+    ctx = c2.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(200, 130, 20, 0, 2 * Math.PI);
+    ctx.stroke();
+
+    var c3 = document.getElementById("myCanvas");
+    ctx = c3.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(200, 185, 20, 0, 2 * Math.PI);
+    ctx.stroke();
+
+    var r =document.getElementById("myCanvas");
+    ctx=r.getContext("2d");
+    ctx.rect(150,20,100,200);
+    ctx.stroke();
+
+
+    Blockly.Blocks['rectangle'] = {
+        init: function() {
+            this.appendDummyInput()
+                .appendField("Rectangle");
+            this.appendValueInput("x")
+                .setCheck("Number")
+                .appendField("x");
+            this.appendValueInput("y")
+                .setCheck("Number")
+                .appendField("y");
+            this.appendValueInput("width")
+                .setCheck("Number")
+                .appendField("width");
+            this.appendValueInput("height")
+                .setCheck("Number")
+                .appendField("height");
+            this.setColour(230);
+            this.setTooltip("");
+            this.setHelpUrl("");
+        }
+    };
+
+    Blockly.JavaScript['rectangle'] = function(block) {
+        var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_ATOMIC);
+        var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_ATOMIC);
+        var value_width = Blockly.JavaScript.valueToCode(block, 'width', Blockly.JavaScript.ORDER_ATOMIC);
+        var value_height = Blockly.JavaScript.valueToCode(block, 'height', Blockly.JavaScript.ORDER_ATOMIC);
+        var code = drawRectangle(value_x  ,  value_y , + value_width, value_height);
+        return code;
+    };
+
+
+        Blockly.Blocks['circle'] = {
+            init: function() {
+                this.appendDummyInput()
+                    .appendField("Color")
+                    .appendField(new Blockly.FieldColour("#ff0000"), "NAME");
+                this.appendDummyInput()
+                    .appendField("Circle");
+                this.appendValueInput("x")
+                    .setCheck("Number")
+                    .appendField("x");
+                this.appendValueInput("y")
+                    .setCheck("Number")
+                    .appendField("y");
+                this.setColour(230);
+                this.setTooltip("");
+                this.setHelpUrl("");
+            }
+        };
+
+        Blockly.JavaScript['circle'] = function(block) {
+            var colour_name = block.getFieldValue('NAME');
+            var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_ATOMIC);
+            var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_ATOMIC);
+            var code = drawCircle(value_x , value_y, colour_name);
+            return code;
+        };
+
+        function drawCircle(x, y, color) {
+            var c1 = document.getElementById("myCanvas");
+            var ctx = c1.getContext("2d");
+            ctx.beginPath();
+            ctx.arc(x, y, 20, 0, 2 * Math.PI);
+            ctx.stroke();
+            ctx.fillStyle = color;
+            ctx.fill();
+        }
+
+        function drawRectangle(x,y,width,height){
+            var r =document.getElementById("myCanvas");
+            ctx=r.getContext("2d");
+            ctx.rect(x,y,width,height);
+            ctx.stroke();
+        }
+
+    let demoWorkspace = Blockly.inject('blocklyDiv',
+        {toolbox: document.getElementById('toolbox')});
+
+    function runCode(){
+        drawCanvas();
+        window.LoopTrap = 1000;
+        Blockly.JavaScript.INFINITE_LOOP_TRAP =
+            'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
+        var code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+        Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+        console.log(code);
+    }
+
+    function next() {
+            window.location.href="trafficLightsFunction.html";
+    }
+
+    function saveWorkspace() {
+        var xmlDom = Blockly.Xml.workspaceToDom(Blockly.mainWorkspace);
+        var xmlText = Blockly.Xml.domToPrettyText(xmlDom);
+        localStorage.setItem("blockly.xml", xmlText);
+    }
+
+    function loadWorkspace() {
+        var xmlText = localStorage.getItem("blockly.xml");
+        if (xmlText) {
+            Blockly.mainWorkspace.clear();
+            xmlDom = Blockly.Xml.textToDom(xmlText);
+            Blockly.Xml.domToWorkspace(Blockly.mainWorkspace, xmlDom);
+        }
+    }
+
+
+
+</script>
+</body>
+</html>

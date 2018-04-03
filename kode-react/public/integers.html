@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Integers</title>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <script src="Blockly/popup.js"></script>
+    <script src="Blockly/blockly_compressed.js"></script>
+    <script src="Blockly/blocks_compressed.js"></script>
+    <script src="Blockly/en.js"></script>
+    <script src="Blockly/javascript_compressed.js"></script>
+    <script src="Blockly/storage.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+    <script src="Blockly/tooltip.js"></script>
+    <link rel="stylesheet" type="text/css" href="BlocklyCSS.css">
+</head>
+<body>
+
+<xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">
+    <block type="math_number">
+        <field name="NUM">0</field>
+    </block>
+</xml>
+
+<!-- nav -->
+<nav class="nav">
+    <div style="display:table-cell; vertical-align:middle; text-align:center">
+        <img src="Blockly/logo.png" width="160px" height="100px">
+    </div>
+</nav>
+
+<div id="alert" class="alert alert-primary" role="alert" style="width: 1000px; margin-left: 500px;">
+    <p><img src="https://media.giphy.com/media/3ohhwBfx3ik9jIVTOM/giphy.gif" style="width: 30px; height: 30px;">Move the
+        number Block to the workspace and change the number from 0 to any number between 1 to 10 and hit run</p>
+</div>
+
+<div id="nextalert" class="alert alert-danger collapse" role="alert">
+    Are you sure your number is between 1 to 10?
+</div>
+
+<div id="wrong" class="alert alert-danger collapse" role="alert">
+    Are you sure you have entered a number yet?
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <!-- Buttons -->
+            <div class="runbutton">
+                <button type="button" class="btn btn-success custom" data-toggle="tooltip" data-placement="auto"
+                        title="Drag the Blocks from the logic section and see how many steps does it take the cat to reach it's food!">
+                    Hint
+                    <i class="fa fa-question"></i></button>
+            </div>
+
+            <div class="runbutton">
+                <button type="button" class="btn btn-success custom"
+                        onclick="runCode()">
+                    Run <i class="fa fa-play-circle"></i></i>
+                </button>
+            </div>
+
+            <div class="runbutton">
+                <button type="button" class="btn btn-success custom" onclick="next()">
+                    Next <i class="fa fa-forward"></i></button>
+            </div>
+
+            <div class="runbutton">
+                <button type="button" class="btn btn-success custom" data-toggle="tooltip" data-placement="auto"
+                        title="Click to save your work" onclick="saveWorkspace()">Save
+                    <i class="fa fa-save 2x"></i></button>
+            </div>
+
+            <div class="runbutton">
+                <button type="button" class="btn btn-success custom" onclick="loadWorkspace()" data-toggle="tooltip"
+                        data-placement="auto"
+                        title="Click on Restore, if you saved your blocks before">Restore
+                    <i class="fa fa-download"></i></button>
+            </div>
+        </div>
+        <div id="blocklyDiv" style="height: 300px; width: 600px; margin-right: 200px"></div>
+    </div>
+</div>
+
+<!-- Popup -->
+<div id="dropElem">
+    <div id="dropContent">
+        <div id="dropClose">X</div>
+        <div><img src="Blockly/logo.png" width="160px" height="100px" style="margin-left: 200px"></div>
+        <p style="font-family: Verdana, sans-serif; text-align: center">Let's look at Integers! </p>
+        <div>
+            <p><img src="https://media.giphy.com/media/3ohhwzFoJL39gzI4dW/giphy.gif"
+                    style=" width: 50px; height: 50px; margin-left: 20px; margin-bottom: 30px">
+                <img src="https://media.giphy.com/media/l378rGBRtaCzDD6zm/giphy.gif"
+                     style=" width: 50px; height: 50px; margin-left: 20px; margin-bottom: 30px">
+                <img src="https://media.giphy.com/media/l378BI64iQBjEEoes/giphy.gif"
+                     style=" width: 50px; height: 50px; margin-left: 20px; margin-bottom: 30px">
+                <img src="https://media.giphy.com/media/3ov9kbWbt8nCt1RVq8/giphy.gif"
+                     style=" width: 50px; height: 50px; margin-left: 20px; margin-bottom: 30px">
+                <img src=https://media.giphy.com/media/xT9IgvyNbTQm8BFtRK/giphy.gif
+                     style=" width: 50px; height: 50px; margin-left: 20px; margin-bottom: 30px">
+                <img src="https://media.giphy.com/media/uh086tuwf6Jr2/giphy.gif"
+                     style=" width: 50px; height: 50px; margin-left: 20px; margin-bottom: 30px">
+                <img src="https://media.giphy.com/media/3ohhwf7I8Z1ZtpeAhi/giphy.gif"
+                     style=" width: 50px; height: 50px; margin-left: 20px; margin-bottom: 30px">
+            </p>
+            <p style="font-family: Verdana, sans-serif; text-align: center">Did you get $100 for your birthday?</p>
+            <p style="font-family: Verdana, sans-serif; text-align: center">Lucky you!</p>
+            <p style="font-family: Verdana, sans-serif;text-align: center ">Did you know 100 is an integer. </p>
+            <p style="font-family: Verdana, sans-serif; text-align: center">Integers are everywhere! We use them
+                everyday</p>
+            <p style="font-family: Verdana, sans-serif; text-align: center; margin-bottom: 50px">All whole numbers are
+                integers!</p>
+
+            <p> PS. If you are stuck click on Hint!</p>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    let demoWorkspace = Blockly.inject('blocklyDiv',
+        {toolbox: document.getElementById('toolbox')});
+
+    function runCode() {
+        window.LoopTrap = 1000;
+        Blockly.JavaScript.INFINITE_LOOP_TRAP =
+            'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
+        var code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+        code = code.substring(0, code.length - 1);
+        let res = parseInt(code);
+        console.log(res);
+        Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+        console.log(code);
+        console.log(code);
+
+        let url = "";
+        if (res === 1) {
+            url = "https://media.giphy.com/media/3ohhwzFoJL39gzI4dW/giphy.gif";
+        } else if (res === 2) {
+            url = "https://media.giphy.com/media/xT9IgvyNbTQm8BFtRK/giphy.gif";
+        } else if (res === 3) {
+            url = "https://media.giphy.com/media/xT9IgLu5t4uv5DnTSU/giphy.gif";
+        } else if (res === 4) {
+            url = "https://media.giphy.com/media/xT9IgtcWa70ulQYz4Y/giphy.gif";
+        } else if (res === 5) {
+            url = "https://media.giphy.com/media/3ohhwf7I8Z1ZtpeAhi/giphy.gif";
+        } else if (res === 6) {
+            url = "";
+        } else if (res === 7) {
+            url = "https://media.giphy.com/media/l378rGBRtaCzDD6zm/giphy.gif";
+        } else if (res === 8) {
+            url = "https://media.giphy.com/media/3ov9kbWbt8nCt1RVq8/giphy.gif";
+        } else if (res === 9) {
+            url = "https://media.giphy.com/media/3ov9jJbGQuktIayru0/giphy.gif";
+        } else if (res === 10) {
+            url = "https://media.giphy.com/media/e6LMsw8Rf5czK/giphy.gif";
+        }
+
+        if (Number.isInteger(res) && (res <= 10 && res >= 1)) {
+            bootbox.alert({
+                message: "<p align='center'> Your Number is..... </p>" +
+                "<br/><p align='center'><img src='" + url + " '></p>" + "<p align='center'> Click next! </p>"
+            });
+        } else if (res >= 10 || res <= 1) {
+            $('#nextalert').show();
+            $('#alert').hide();
+            $('#wrong').hide();
+        } else {
+            $('#alert').hide();
+            $('#wrong').show();
+            $('#nextalert').hide();
+        }
+    }
+
+    function next() {
+        var code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+        code = code.substring(0, code.length - 1);
+        let res = parseInt(code);
+        if (res >= 10 || res <= 1) {
+            window.location.href = "ifStatements.html";
+        } else if (res >= 10 || res <= 1) {
+            $('#nextalert').show();
+            $('#alert').hide();
+            $('#wrong').hide();
+        } else {
+            $('#alert').hide();
+            $('#wrong').show();
+            $('#nextalert').hide();
+        }
+    }
+
+    function saveWorkspace() {
+        var xmlDom = Blockly.Xml.workspaceToDom(Blockly.mainWorkspace);
+        var xmlText = Blockly.Xml.domToPrettyText(xmlDom);
+        localStorage.setItem("blockly.xml", xmlText);
+    }
+
+    function loadWorkspace() {
+        var xmlText = localStorage.getItem("blockly.xml");
+        if (xmlText) {
+            Blockly.mainWorkspace.clear();
+            xmlDom = Blockly.Xml.textToDom(xmlText);
+            Blockly.Xml.domToWorkspace(Blockly.mainWorkspace, xmlDom);
+        }
+    }
+</script>
+
+</body>
+</html>
