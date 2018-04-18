@@ -1,7 +1,10 @@
 import React from 'react'
 import axios from 'axios'
+import {Header, Image, Segment, Message, Label, Button} from "semantic-ui-react";
+import ImageIcon from "../../Blockly.png"
 
 export default class CourseInfo extends React.Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -12,12 +15,9 @@ export default class CourseInfo extends React.Component {
     }
 
     handleClick(id){
-        if(id===6){
-            window.open('/Blockly.html', '_blank');
-        }else if(id===7){
-            window.open('/QuizGame');
+        if(id===8){
+            window.open('/blockly/1');
         }
-
     }
 
 
@@ -37,12 +37,19 @@ export default class CourseInfo extends React.Component {
 
 
     render(){
+        const square = { marginLeft: 30, width: 605, height: 205 };
         return(
             <div>
-                <h1> {this.state.course.name} </h1>
-                <p>{this.state.course.description}</p>
-                <p>Price: $ {this.state.course.price}</p>
-                <button onClick={()=>this.handleClick(this.state.course.id)}>View</button>
+                <Header as='h2' icon textAlign='center' color={"yellow"}>
+                    <Image src={ImageIcon} style={{height: "200px", width: "700px"}}fluid />
+                </Header>
+                <Label as='a' color='blue' ribbon style={{marginTop:"3px", marginLeft: "250px"}}>Price: $ {this.state.course.price}</Label>
+                <Segment  inverted color='black' style={{width: "700px", marginLeft: "250px"}} textAlign='center' >
+                    <Message color="purple" style={{fontSize: "1.875em", fontFamily: "Arial, Helvetica, sans-serif", color:"black"}}>{this.state.course.description}
+                        <div><Button basic color='purple' onClick={()=>this.handleClick(this.state.course.id)}>Start</Button></div>
+                    </Message>
+                </Segment>
+
             </div>
         )
     }

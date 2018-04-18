@@ -5,6 +5,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -26,59 +29,76 @@
 <!-- nav bar -->
 <nav class="nav">
     <div style="display:table-cell; vertical-align:middle; text-align:center">
-        <img src="Blockly/logo.png" width= "160px" height= "100px" >
+        <a href="/" class="ui medium image">
+         <img src="Blockly/logo.png" width= "160px" height= "100px" >
+        </a>
     </div>
 </nav>
 
 <!-- instructions -->
-<div id= "alert" class="alert alert-primary" role="alert">
+<div id= "alert" class="ui pointing below yellow basic label" role="alert">
         Bring the cat to it's food!
     <img src="https://media.giphy.com/media/K8yRBak1cGoKI/giphy.gif" width= "50px" height= "40px" >
 </div>
 
-<div id= "nextalert" class="alert alert-danger collapse" role="alert">
+<div id= "nextalert" class="ui pointing below red basic label" role="alert">
     Oh Uh! The cat is still hungry!
     <img src="https://media.giphy.com/media/K8yRBak1cGoKI/giphy.gif" width= "50px" height= "40px" >
+</div>
+
+<div class="ui pointing below green basic label" style="margin-left: 800px; margin-bottom: 20px" id="wrong" >
+    <p style="color: black">
+        Click Next
+    </p>
 </div>
 
 <div class="container">
     <div class="row">
         <div class="col-sm">
+            <div class="ui vertical buttons">
 
             <!-- Buttons -->
             <div class="runbutton">
-                <button type="button" class="btn btn-success custom" data-toggle="tooltip" data-placement="auto"
+                <button type="button" class="ui inverted yellow button" data-toggle="tooltip" data-placement="auto"
                         title="Drag the Blocks from the logic section and see how many steps does it take the cat to reach it's food!" >Hint
                     <i class="fa fa-question"></i></button>
             </div>
 
             <div class="runbutton">
-                <button type="button" class="btn btn-success custom"
+                <button type="button" class="ui inverted yellow button"
                         onclick="runCode()">
                     Run <i class="fa fa-play-circle"></i></i>
                 </button>
             </div>
 
             <div class="runbutton">
-                <button type="button" class="btn btn-success custom" onclick="next()">
+                <button type="button" class="ui inverted yellow button" onclick="next()">
                     Next <i class="fa fa-forward"></i></button>
             </div>
 
             <div class="runbutton">
-                <button type="button" class="btn btn-success custom" data-toggle="tooltip" data-placement="auto"
+                <button type="button" class="ui inverted yellow button" data-toggle="tooltip" data-placement="auto"
                         title="Click to save your work" onclick="saveWorkspace()">Save
                     <i class="fa fa-save 2x"></i></button>
             </div>
 
             <div class="runbutton">
-                <button type="button" class="btn btn-success custom" onclick="loadWorkspace()" data-toggle="tooltip" data-placement="auto"
+                <button type="button" class="ui inverted yellow button" onclick="loadWorkspace()" data-toggle="tooltip" data-placement="auto"
                         title="Click on Restore, if you saved your blocks before">Restore
                     <i class="fa fa-download"></i></button>
             </div>
 
+                <div class="runbutton">
+                    <a href="/dashboard" > <button class="ui inverted yellow button" href="/dashboard" data-toggle="tooltip" data-placement="auto"
+                                                   title="Make sure to save your work before leaving!">Back to dashboard
+                        <i class="fa fa-backward"></i></button>
+                    </a>
+                </div>
+
             <!--canvas -->
             <canvas id="canvasCat" width="600" height="300">
             </canvas>
+        </div>
         </div>
         <br/>
         <div id="blocklyDiv" style="height: 300px; width: 600px; margin-right: 200px"></div>
@@ -132,7 +152,7 @@
         }
     }
 
-    var c=document.getElementById("canvas");
+    var c=document.getElementById("canvasCat");
     var context = c.getContext("2d");
     var x = 10;
     var y = 145;
@@ -194,7 +214,7 @@
     function next() {
 
         if(x===380){
-            window.location.href="pokemon.html";
+            window.location.href="/blockly/5";
         }else {
             $('#nextalert').show();
             $('#alert').hide();

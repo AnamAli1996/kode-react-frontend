@@ -2,7 +2,7 @@
             init: function() {
                 this.appendDummyInput()
                     .appendField("Turn")
-                    .appendField(new Blockly.FieldDropdown([["Red","R"], ["all","all"]]), "NAME")
+                    .appendField(new Blockly.FieldDropdown([["Red","R"]]), "NAME")
                     .appendField(new Blockly.FieldDropdown([["on","on"], ["off","off"]]), "switch");
                 this.setInputsInline(false);
                 this.setPreviousStatement(true, null);

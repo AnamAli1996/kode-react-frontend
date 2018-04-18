@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Autocomplete from 'react-autocomplete'
-import {Label, Icon, Button} from "semantic-ui-react"
+import {Label, Icon, Button, Input} from "semantic-ui-react"
 import image from '../../search-icon.png'
 
 
@@ -75,7 +75,13 @@ export default class CourseList extends React.Component {
                 </div>
 
 
-                <Autocomplete style={{height: "78px"}}
+                <Autocomplete style={{height: "78px", width: "100%",
+                    padding: "12px 20px",
+                    margin: "8px 0",
+                    display: "inline-block",
+                    border: "1px solid #ccc",
+                    borderRadius: "4px",
+                    boxSizing: "border-box"}}
                 items={this.state.courseList}
                 shouldItemRender={(course, value) => course.name.toLowerCase().indexOf(value.toLowerCase()) > -1}
                 getItemValue={ (course) => course.name}
@@ -97,7 +103,6 @@ export default class CourseList extends React.Component {
                     <Icon color="black" flipped='horizontally' name='search' /></Button>
                 </div>
                 <br />
-                <Label as='a' color='orange' tag href="/AllCourses">View All Courses</Label>
             </div>
         );
     }

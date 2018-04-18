@@ -77,7 +77,7 @@ class MobileContainer extends React.Component {
         const { sidebarOpened } = this.state
 
         if (sidebarOpened) this.setState({ sidebarOpened: false })
-    }
+    };
 
     handleToggle = () => this.setState({ sidebarOpened: !this.state.sidebarOpened })
 

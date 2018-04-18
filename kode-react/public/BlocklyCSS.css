@@ -260,13 +260,14 @@ body {
 }
 
 #drawCircle {
-    height: 300px;
-    width: 300px;
+    height: 200px;
+    width: 200px;
     border-radius: 50%;
     background-color: white;
     border: solid 1px black;
     position: absolute;
-    top: 430px;
+    top: 460px;
+    left: 120px;
     display: none;
 
 }
@@ -280,8 +281,8 @@ body {
     background-color: transparent;
     position: absolute;
     display: none;
-    top: 430px;
-
+    top: 480px;
+    left: 120px;
 }
 
 #cat {
@@ -311,13 +312,14 @@ body {
 }
 
 #rectangle {
-    width: 500px;
+    width: 300px;
     height: 100px;
     background-color: white;
     border: solid 1px black;
     position: absolute;
     display: none;
-    top: 430px;
+    top: 530px;
+    left: 30px;
 }
 
 #TrafficRectangle {

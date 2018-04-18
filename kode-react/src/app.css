@@ -17,8 +17,19 @@ body {
     background:#333 url(https://static.tumblr.com/maopbtg/a5emgtoju/inflicted.png) repeat;
 }
 
+.ui.image.label{
+width: 60px;
+}
+
 input{
     height: 32px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 .custom{
     background-image: url("./jumbotron.jpg");

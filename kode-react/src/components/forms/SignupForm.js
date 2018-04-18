@@ -47,6 +47,7 @@ class SignupForm extends React.Component {
         if (!isEmail(data.email)) errors.email = "Invalid email";
         if (!data.password) errors.password = "Can't be blank";
 
+
         return errors;
     };
 
@@ -153,6 +154,7 @@ class SignupForm extends React.Component {
                                 />
 
                                 <Button fluid size='large' color='yellow'>Let's go</Button>
+
                             </Segment>
                         </Form>
                         <Message color='yellow'>

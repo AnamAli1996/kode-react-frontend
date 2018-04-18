@@ -4,6 +4,9 @@
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -42,65 +45,80 @@
 </nav>
 
 <!-- instructions -->
-<div id= "alert" class="alert alert-primary" role="alert">
+<div id= "alert" class="ui pointing below yellow basic label"  style="margin-left: 800px; margin-bottom: 20px" role="alert">
     <img src="https://media.giphy.com/media/Bn6djQ6MgEWZi/giphy.gif" width= "30px" height= "30px" >
 
     Try to drag the blocks from the Logic area and see what happens!
 </div>
 
-<div class="alert alert-primary collapse" role="alert" id="nextalert">
+<div class="ui pointing below green basic label" style="margin-left: 800px; margin-bottom: 20px" role="alert" id="nextalert">
     <img src="https://media.giphy.com/media/Bn6djQ6MgEWZi/giphy.gif" width= "30px" height= "30px" >
          Now try to turn it off and click Run!
 </div>
 
+<div class="ui pointing below red basic label" style="margin-left: 800px; margin-bottom: 20px" id="wrong" >
+    <p style="color: black">
+        Click Next
+    </p>
+</div>
 
 <!-- container -->
 <div class="container">
     <div class="row">
-        <div class="col-sm">
+        <div class="ui vertical buttons">
+            <div class="col-sm">
 
             <!-- Buttons -->
             <div class="runbutton">
-                <button type="button" class="btn btn-success custom" data-toggle="tooltip" data-placement="auto"
+                <button type="button" class="ui inverted yellow button" data-toggle="tooltip" data-placement="auto"
                         title="Drag the Block from the logic section and click on run to see what happens! Make sure to click on off before proceeding to Next!" >Hint
                     <i class="fa fa-question"></i></button>
             </div>
 
             <div class="runbutton">
-                <button type="button" class="btn btn-success custom"
+                <button type="button" class="ui inverted yellow button"
                         onclick="runCode()">
                     Run <i class="fa fa-play-circle"></i></i>
                 </button>
             </div>
 
             <div class="runbutton">
-                <button type="button" class="btn btn-success custom" onclick="next()">
+                <button type="button" class="ui inverted yellow button" onclick="next()">
                     Next <i class="fa fa-forward"></i></button>
             </div>
 
             <div class="runbutton">
-                <button type="button" class="btn btn-success custom" data-toggle="tooltip" data-placement="auto"
+                <button type="button" class="ui inverted yellow button" data-toggle="tooltip" data-placement="auto"
                         title="Click to save your work" onclick="saveWorkspace()">Save
                     <i class="fa fa-save 2x"></i></button>
             </div>
 
             <div class="runbutton">
-                <button type="button" class="btn btn-success custom" onclick="loadWorkspace()" data-toggle="tooltip" data-placement="auto"
+                <button type="button" class="ui inverted yellow button" onclick="loadWorkspace()" data-toggle="tooltip" data-placement="auto"
                         title="Click on Restore, if you saved your blocks before">Restore
                     <i class="fa fa-download"></i></button>
             </div>
 
+                <div class="runbutton">
+                    <a href="/dashboard" > <button class="ui inverted yellow button" href="/dashboard" data-toggle="tooltip" data-placement="auto"
+                                                   title="Make sure to save your work before leaving!">Back to dashboard
+                        <i class="fa fa-backward"></i></button>
+                    </a>
+                </div>
+
+
             <!--circle -->
             <div id="circle"></div>
+        </div>
         </div>
         <br/>
 
         <!-- Blockly Div -->
         <div id="wrapper">
-            <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
+            <div id="blocklyDiv" style="margin-left: 100px; height: 480px; width: 600px;"></div>
             <br>
             <form id="paper" method="get" action="">
-                <textarea id="text" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 200px; "></textarea>
+                <textarea id="text" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 200px; margin-left: 100px"></textarea>
             </form>
         </div>
 
@@ -139,6 +157,10 @@
         if(code === "document.getElementById('circle').style.backgroundColor = 'red';"){
             $('#nextalert').show();
             $('#alert').hide();
+        }else if(code==="document.getElementById('circle').style.backgroundColor = 'white';"){
+            $('#wrong').show();
+            $('#alert').hide();
+            $('#nextalert').hide();
         }
         try {
             eval(code);
@@ -158,7 +180,7 @@
                 "<br/><img src='" + url + "' height='700px' width='470px' >",
             });
         }else
-            window.location.href="DrawBlockly.html";
+            window.location.href="/blockly/3";
     }
 
 
