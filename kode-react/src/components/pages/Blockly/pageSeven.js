@@ -1,14 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
-import {Button, Container, Grid, Header, Icon,  Image,  Menu, Responsive, Segment, Sidebar, Visibility, Embed} from 'semantic-ui-react'
-import loops from "../../../loops.png"
+import {Button, Container, Grid, Header, Icon,  Image,  Menu, Responsive, Segment, Sidebar, Visibility,} from 'semantic-ui-react'
+
 const HomepageHeading = ({ mobile }) => (
 
-    <Container text style={{backgroundImage: "url('https://media.giphy.com/media/I3JazteAZsWI0/giphy.gif')", backgroundRepeat: "repeat" }}>
+    <Container text style={{backgroundImage: "url('http://backgroundcheckall.com/wp-content/uploads/2017/12/transparent-background-gif-7.gif')", backgroundRepeat: "repeat" }}>
         <Header
             as='h1'
-            content='Chapter Six'
+            content='Chapter Seven'
             inverted
             style={{
                 fontSize: mobile ? '2em' : '4em',
@@ -19,7 +19,7 @@ const HomepageHeading = ({ mobile }) => (
         />
         <Header
             as='h2'
-            content="Loops"
+            content="Integers"
             inverted
             style={{
                 fontSize: mobile ? '1.5em' : '1.7em',
@@ -27,7 +27,9 @@ const HomepageHeading = ({ mobile }) => (
                 marginTop: mobile ? '0.5em' : '1.5em',
             }}
         />
-        <Image src="https://media.giphy.com/media/UzzPg9BGIgwMw/giphy.gif" centered size="small"/>
+
+        <Image src="https://media.giphy.com/media/yUXRXo2WQgfnO/giphy.gif" centered size="small"/>
+
     </Container>
 
 );
@@ -136,27 +138,27 @@ const HomepageLayout = (isAuthenticated, logout) => (
             <Grid container stackable verticalAlign='middle'>
                 <Grid.Row>
                     <Grid.Column  width={18}>
-                        <Header as='h3' textAlign="centered" style={{ fontSize: '2em' , color: "black"}}>Finally let's get on to the basic concepts of any programming language.</Header>
-                        <Header as='h3' textAlign="centered" style={{ fontSize: '2em' , color: "black"}}>First we will start with easy loops</Header>
+                        <Header as='h3' textAlign="centered" style={{ fontSize: '2em' , color: "black"}}>The blocks in the previous exercise can also be represented in JavaScript.</Header>
+                        <Header as='h3' textAlign="centered" style={{ fontSize: '2em' , color: "black"}}>moveForward()</Header>
                         <p style={{color: "black",  fontSize: '1.33em', textAlign:"center" }}>
-                            Let's see what Mark Zuckerburg, founder of Facebook says about loops!
-
+                            What is Javascript you may ask?
                         </p>
-                        <br />
-                        <p style={{color: "black",  fontSize: '1.33em', textAlign:"center" }}>
-                            <Embed
-                                id='mgooqyWMTxk'
-                                placeholder={loops}
-                                source='youtube'
-                            />
-                        </p>
-
-                        <Header as='h3' textAlign="centered" style={{ fontSize: '2em', color: "black" }}>Loops allow us to do things over and over again!</Header>
+                        <Header as='h3' textAlign="centered" style={{ fontSize: '2em', color: "black" }}>It is one of the most widely used coding language.</Header>
                         <p style={{ textAlign:"center", fontWeight: 'bold', color: "black", fontSize: '1.33em' }}>
-                            Let's use loops to help Cookie monster to get to his cookies!
+                            Javascript is secret sauce to making you web page awesome!
+                        </p>
+                        <p style={{ textAlign:"center", fontWeight: 'bold', color: "black", fontSize: '1.33em' }}>
+                            You can even make games using Javascript!
+                        </p>
+                        <p style={{ textAlign:"center", fontWeight: 'bold', color: "black", fontSize: '1.33em' }}>
+                            We will learn about Javascript in the other courses, but let's help Pickachu get to Ash first!
+                        </p>
+                        <p style={{ textAlign:"center", fontWeight: 'bold', color: "black", fontSize: '1.33em' }}>
+                            More thinking involved now!
+
                             <p>
                                 <br />
-                                <Button inverted color='black' onClick={onClick()} href="/loops.html" content="Let's help Cookie Monster" />
+                                <Button inverted color='black' onClick={onClick()} href="/pokemon.html" content='Go!' />
                             </p>
                         </p>
                     </Grid.Column>
@@ -176,10 +178,10 @@ HomepageLayout.propTypes = {
 };
 
 function onClick(){
-    var page = 6;
+    var page = 5;
     var studentId = localStorage.getItem("studentId");
     axios.get("http://localhost:8080/api/Student/" + studentId + "/addPage/" + page );
-    localStorage.setItem("studentProgress", "/loops.html");
+    localStorage.setItem("studentProgress", "/pokemon.html");
     console.log(localStorage.getItem("studentProgress"))
 
 }

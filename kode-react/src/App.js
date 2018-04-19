@@ -15,7 +15,8 @@ import PageTwo from "./components/pages/Blockly/pageTwo";
 import PageThree from "./components/pages/Blockly/pageThree";
 import PageFour from "./components/pages/Blockly/pageFour";
 import PageFive from "./components/pages/Blockly/pageFive";
-
+import PageSix from "./components/pages/Blockly/pageSix";
+import PageSeven from "./components/pages/Blockly/pageSeven";
 const App = ({location}) => (
             <div>
                 <div className="container">
@@ -52,6 +53,14 @@ const App = ({location}) => (
                     <Route
                         path="/blockly/5"
                         exact component={PageFive}
+                    />
+                    <Route
+                        path="/blockly/6"
+                        exact component={PageSix}
+                    />
+                    <Route
+                        path="/blockly/7"
+                        exact component={PageSeven}
                     />
 
                     <GuestRoute

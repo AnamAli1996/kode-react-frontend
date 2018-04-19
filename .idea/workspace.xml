@@ -17,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Blockly.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Blockly.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/kode-react/public/Blockly.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="103" column="26" lean-forward="true" selection-start-line="98" selection-start-column="20" selection-end-line="103" selection-end-column="26" />
+            <state relative-caret-position="493">
+              <caret line="98" column="35" lean-forward="false" selection-start-line="98" selection-start-column="35" selection-end-line="98" selection-end-column="35" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -37,8 +37,8 @@
       <file leaf-file-name="CharacterBlockly.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kode-react/public/CharacterBlockly.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="216" column="44" lean-forward="false" selection-start-line="216" selection-start-column="44" selection-end-line="216" selection-end-column="44" />
+            <state relative-caret-position="426">
+              <caret line="95" column="22" lean-forward="true" selection-start-line="90" selection-start-column="16" selection-end-line="95" selection-end-column="22" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -47,93 +47,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pageFive.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kode-react/src/components/pages/Blockly/pageFive.js">
+      <file leaf-file-name="pageSeven.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kode-react/src/components/pages/Blockly/pageSeven.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="158" column="116" lean-forward="false" selection-start-line="158" selection-start-column="116" selection-end-line="158" selection-end-column="116" />
+            <state relative-caret-position="315">
+              <caret line="21" column="29" lean-forward="false" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SignupForm.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/kode-react/src/components/forms/SignupForm.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-760">
-              <caret line="90" column="35" lean-forward="false" selection-start-line="90" selection-start-column="35" selection-end-line="90" selection-end-column="35" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pageFour.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kode-react/src/components/pages/Blockly/pageFour.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="177" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="food.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kode-react/public/Blockly/food.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kode-react/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="53" column="49" lean-forward="false" selection-start-line="53" selection-start-column="49" selection-end-line="53" selection-end-column="49" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DashboardPage.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kode-react/src/components/pages/DashboardPage.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="40" column="36" lean-forward="false" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pageTwo.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kode-react/src/components/pages/Blockly/pageTwo.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="157" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CircleBlockly.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kode-react/public/CircleBlockly.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="101" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="8" selection-end-column="101" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="270">
+              <caret line="18" column="16" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -192,9 +123,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/kode-react/src/components/Jumbotron.js" />
-        <option value="$PROJECT_DIR$/kode-react/public/TrafficLightSequence.js" />
-        <option value="$PROJECT_DIR$/kode-react/public/TrafficLightSequence.html" />
         <option value="$PROJECT_DIR$/kode-react/src/actions/signupActions.js" />
         <option value="$PROJECT_DIR$/kode-react/src/index.js" />
         <option value="$PROJECT_DIR$/kode-react/src/api.js" />
@@ -240,9 +168,12 @@
         <option value="$PROJECT_DIR$/kode-react/src/components/pages/Blockly/pageFour.js" />
         <option value="$PROJECT_DIR$/kode-react/public/CharacterBlockly.html" />
         <option value="$PROJECT_DIR$/kode-react/src/components/pages/Blockly/PageFive.js" />
-        <option value="$PROJECT_DIR$/kode-react/src/App.js" />
         <option value="$PROJECT_DIR$/kode-react/src/components/pages/Blockly/pageFive.js" />
         <option value="$PROJECT_DIR$/kode-react/src/components/forms/SignupForm.js" />
+        <option value="$PROJECT_DIR$/kode-react/src/components/pages/Blockly/pageSix.js" />
+        <option value="$PROJECT_DIR$/kode-react/public/Loops.html" />
+        <option value="$PROJECT_DIR$/kode-react/src/App.js" />
+        <option value="$PROJECT_DIR$/kode-react/src/components/pages/Blockly/pageSeven.js" />
       </list>
     </option>
   </component>
@@ -289,6 +220,12 @@
               <item name="KODE-REACT 2 2" type="b2602c69:ProjectViewProjectNode" />
               <item name="KODE-REACT 2 2" type="462c0819:PsiDirectoryNode" />
               <item name="kode-react" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="KODE-REACT 2 2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KODE-REACT 2 2" type="462c0819:PsiDirectoryNode" />
+              <item name="kode-react" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="KODE-REACT 2 2" type="b2602c69:ProjectViewProjectNode" />
@@ -427,7 +364,7 @@
       <workItem from="1522792297605" duration="2873000" />
       <workItem from="1523447561546" duration="745000" />
       <workItem from="1523796058145" duration="197000" />
-      <workItem from="1523796451998" duration="38237000" />
+      <workItem from="1523796451998" duration="41713000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1510180243646</created>
@@ -573,7 +510,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="483596000" />
+    <option name="totallyTimeSpent" value="487072000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -586,7 +523,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769045" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905984" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10218464" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32889965" sideWeight="0.7787174" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.7787174" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -601,12 +538,12 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32889965" sideWeight="0.22128259" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.22128259" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769045" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905984" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32889965" sideWeight="0.7787174" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24665257" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.4947146" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10218464" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -647,7 +584,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/kode-react/public/Loops.html</url>
-          <line>159</line>
+          <line>182</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -662,80 +599,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/kode-react/public/List.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="118" column="170" lean-forward="false" selection-start-line="118" selection-start-column="170" selection-end-line="118" selection-end-column="170" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kode-react/public/TrafficLightSequence.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="34" lean-forward="true" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kode-react/src/components/forms/LoginForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="86" column="55" lean-forward="true" selection-start-line="86" selection-start-column="55" selection-end-line="86" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kode-react/src/components/search/CourseSearch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kode-react/public/ifStatements.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2882">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1520804436588" expanded="true" signature="7734:7760" ph="..." />
-            <marker date="1520804436588" expanded="true" signature="7857:7883" ph="..." />
-            <marker date="1520804436588" expanded="true" signature="7992:8018" ph="..." />
-            <marker date="1520804436588" expanded="true" signature="8097:8123" ph="..." />
-            <marker date="1520804436588" expanded="true" signature="8231:8257" ph="..." />
-            <marker date="1520804436588" expanded="true" signature="8348:8362" ph="..." />
-            <marker date="1520804436588" expanded="true" signature="8471:8497" ph="..." />
-            <marker date="1520804436588" expanded="true" signature="8590:8603" ph="..." />
-            <marker date="1520804436588" expanded="true" signature="8710:8736" ph="..." />
-            <marker date="1520804436588" expanded="true" signature="8842:8854" ph="..." />
-            <marker date="1520804436588" expanded="true" signature="8960:8986" ph="..." />
-            <marker date="1520804436588" expanded="true" signature="9071:9084" ph="..." />
-            <marker date="1520804436588" expanded="true" signature="9168:9181" ph="..." />
-            <marker date="1520804436588" expanded="true" signature="9286:9312" ph="..." />
-            <marker date="1520804436588" expanded="true" signature="9510:9536" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kode-react/src/components/search/CourseList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="81" column="38" lean-forward="false" selection-start-line="81" selection-start-column="33" selection-end-line="81" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <marker date="1523895070952" expanded="true" signature="1556:3350" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kode-react/public/Blockly/CircleBlocks.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="36" lean-forward="true" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kode-react/src/beginners-2b-1.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -850,16 +713,6 @@
     <entry file="file://$PROJECT_DIR$/kode-react/src/components/pages/logo.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kode-react/src/components/pages/HomePage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3242">
-          <caret line="32" column="36" lean-forward="false" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/kode-react/src/components/routes/GuestRoute.js">
@@ -1023,22 +876,7 @@
         <state relative-caret-position="120">
           <caret line="8" column="101" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="8" selection-end-column="101" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kode-react/public/Blockly.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="103" column="26" lean-forward="true" selection-start-line="98" selection-start-column="20" selection-end-line="103" selection-end-column="26" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#textarea#0;n#form#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1058,44 +896,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kode-react/public/CharacterBlockly.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="216" column="44" lean-forward="false" selection-start-line="216" selection-start-column="44" selection-end-line="216" selection-end-column="44" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kode-react/src/components/pages/Blockly/pageFour.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="177" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
+        <state relative-caret-position="163">
+          <caret line="161" column="0" lean-forward="true" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kode-react/src/App.js">
+    <entry file="file://$PROJECT_DIR$/kode-react/src/components/pages/HomePage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="53" column="49" lean-forward="false" selection-start-line="53" selection-start-column="49" selection-end-line="53" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kode-react/src/components/pages/Blockly/pageFive.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="158" column="116" lean-forward="false" selection-start-line="158" selection-start-column="116" selection-end-line="158" selection-end-column="116" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="248">
+          <caret line="196" column="24" lean-forward="false" selection-start-line="196" selection-start-column="24" selection-end-line="200" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1105,6 +920,130 @@
           <caret line="90" column="35" lean-forward="false" selection-start-line="90" selection-start-column="35" selection-end-line="90" selection-end-column="35" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kode-react/src/components/pages/Blockly/pageSix.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="158" column="93" lean-forward="false" selection-start-line="158" selection-start-column="93" selection-end-line="158" selection-end-column="93" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kode-react/public/manifest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kode-react/public/Loops.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="220" column="43" lean-forward="false" selection-start-line="220" selection-start-column="43" selection-end-line="220" selection-end-column="43" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#xml#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kode-react/public/pokemon.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2354">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kode-react/src/components/pages/Blockly/pageFive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="158" column="116" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kode-react/public/ifStatements.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2311">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1520804436588" expanded="true" signature="7734:7760" ph="..." />
+            <marker date="1520804436588" expanded="true" signature="7857:7883" ph="..." />
+            <marker date="1520804436588" expanded="true" signature="7992:8018" ph="..." />
+            <marker date="1520804436588" expanded="true" signature="8097:8123" ph="..." />
+            <marker date="1520804436588" expanded="true" signature="8231:8257" ph="..." />
+            <marker date="1520804436588" expanded="true" signature="8348:8362" ph="..." />
+            <marker date="1520804436588" expanded="true" signature="8471:8497" ph="..." />
+            <marker date="1520804436588" expanded="true" signature="8590:8603" ph="..." />
+            <marker date="1520804436588" expanded="true" signature="8710:8736" ph="..." />
+            <marker date="1520804436588" expanded="true" signature="8842:8854" ph="..." />
+            <marker date="1520804436588" expanded="true" signature="8960:8986" ph="..." />
+            <marker date="1520804436588" expanded="true" signature="9071:9084" ph="..." />
+            <marker date="1520804436588" expanded="true" signature="9168:9181" ph="..." />
+            <marker date="1520804436588" expanded="true" signature="9286:9312" ph="..." />
+            <marker date="1520804436588" expanded="true" signature="9510:9536" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kode-react/public/TrafficLightRepeat.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kode-react/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="16" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kode-react/src/components/pages/Blockly/pageSeven.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="29" lean-forward="false" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kode-react/public/CharacterBlockly.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="95" column="22" lean-forward="true" selection-start-line="90" selection-start-column="16" selection-end-line="95" selection-end-column="22" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kode-react/public/Blockly.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="98" column="35" lean-forward="false" selection-start-line="98" selection-start-column="35" selection-end-line="98" selection-end-column="35" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#form#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
