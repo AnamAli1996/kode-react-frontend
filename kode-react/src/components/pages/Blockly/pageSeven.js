@@ -138,27 +138,24 @@ const HomepageLayout = (isAuthenticated, logout) => (
             <Grid container stackable verticalAlign='middle'>
                 <Grid.Row>
                     <Grid.Column  width={18}>
-                        <Header as='h3' textAlign="centered" style={{ fontSize: '2em' , color: "black"}}>The blocks in the previous exercise can also be represented in JavaScript.</Header>
-                        <Header as='h3' textAlign="centered" style={{ fontSize: '2em' , color: "black"}}>moveForward()</Header>
-                        <p style={{color: "black",  fontSize: '1.33em', textAlign:"center" }}>
-                            What is Javascript you may ask?
-                        </p>
-                        <Header as='h3' textAlign="centered" style={{ fontSize: '2em', color: "black" }}>It is one of the most widely used coding language.</Header>
+                        <Header as='h3' textAlign="centered" style={{ fontSize: '2em' , color: "black"}}>Welldone! You have done so good so far!.</Header>
+                        <Header as='h3' textAlign="centered" style={{ fontSize: '2em' , color: "black"}}>Lets talk about numbers!</Header>
+                        <Header as='h3' textAlign="centered" style={{ fontSize: '2em', color: "black" }}>As programmers we love our numbers, but we call them Integers. </Header>
                         <p style={{ textAlign:"center", fontWeight: 'bold', color: "black", fontSize: '1.33em' }}>
-                            Javascript is secret sauce to making you web page awesome!
+                            Integers are any whole numbers, like 1, 3 , 10 , 2000!
                         </p>
                         <p style={{ textAlign:"center", fontWeight: 'bold', color: "black", fontSize: '1.33em' }}>
-                            You can even make games using Javascript!
+                            In a lot of programming languages we call them ints.
                         </p>
                         <p style={{ textAlign:"center", fontWeight: 'bold', color: "black", fontSize: '1.33em' }}>
-                            We will learn about Javascript in the other courses, but let's help Pickachu get to Ash first!
+                            ints store numerical data as well as use in loops to repeat something a certain number of times which you will see later!
                         </p>
                         <p style={{ textAlign:"center", fontWeight: 'bold', color: "black", fontSize: '1.33em' }}>
-                            More thinking involved now!
+                           Let's do a simple exercise and try to write out a number between 1 to 10!
 
                             <p>
                                 <br />
-                                <Button inverted color='black' onClick={onClick()} href="/pokemon.html" content='Go!' />
+                                <Button inverted color='black' onClick={onClick()} href="/integers.html" content='1.. 2... 3...Go!' />
                             </p>
                         </p>
                     </Grid.Column>
@@ -178,10 +175,10 @@ HomepageLayout.propTypes = {
 };
 
 function onClick(){
-    var page = 5;
+    var page = 7;
     var studentId = localStorage.getItem("studentId");
     axios.get("http://localhost:8080/api/Student/" + studentId + "/addPage/" + page );
-    localStorage.setItem("studentProgress", "/pokemon.html");
+    localStorage.setItem("studentProgress", "/integers.html");
     console.log(localStorage.getItem("studentProgress"))
 
 }

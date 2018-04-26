@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Traffic Lights</title>
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -13,6 +14,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <script src="Blockly/popup.js"></script>
+    <title>Blockly</title>
     <script src="Blockly/blockly_compressed.js"></script>
     <script src="Blockly/blocks_compressed.js"></script>
     <script src="Blockly/en.js"></script>
@@ -42,61 +44,74 @@
 <!-- nav -->
 <nav class="nav">
     <div style="display:table-cell; vertical-align:middle; text-align:center">
-        <img src="Blockly/logo.png" width= "160px" height= "100px" >
+        <a href="/" class="ui medium image">
+            <img src="Blockly/logo.png" width= "160px" height= "100px" >
+        </a>
     </div>
 </nav>
 
 <!-- instructions -->
-<div id= "alert" class="alert alert-primary" role="alert">
+<div id= "alert" class="ui pointing below yellow basic label" role="alert" style="width: 600px;">
     <img src="https://media.giphy.com/media/11j83b6mlIpWdq/giphy.gif" width= "30px" height= "30px" >
-    Lets create a traffic light!
-    Read instructions for more details.
+    Grab circle block three times on the screen and than drag the rectangle and join the block from Math and add values to the circle and rectangle!
 </div>
 
 <!-- container -->
 <div class="container">
     <div class="row">
-        <div class="col-sm">
-
+        <div class="ui vertical buttons">
+             <div class="col-sm">
             <!-- Buttons -->
-            <div class="runbutton">
-                <button type="button" class="btn btn-success custom" data-toggle="tooltip" data-placement="auto"
-                        title="Drag the Block from the logic section and click on run to see what happens! Make sure to click on off before proceeding to Next!" >Hint
-                    <i class="fa fa-question"></i></button>
-            </div>
+
+                 <div class="runbutton">
+                     <button class="ui inverted yellow button" data-toggle="tooltip" data-placement="auto"
+                             title="Write 'Hello World' where 'Don't Panic' is written" >Hint
+                         <i class="fa fa-question"></i></button>
+                     </button>
+                 </div>
+
 
             <div class="runbutton">
-                <button type="button" class="btn btn-success custom"
+                <button type="button" class="ui inverted yellow button"
                         onclick="runCode()">
-                    Run <i class="fa fa-play-circle"></i></i>
+                    Run <i class="fa fa-play-circle"></i>
                 </button>
             </div>
 
             <div class="runbutton">
-                <button type="button" class="btn btn-success custom" onclick="next()">
+                <button type="button" class="ui inverted yellow button" onclick="next()">
                     Next <i class="fa fa-forward"></i></button>
             </div>
 
             <div class="runbutton">
-                <button type="button" class="btn btn-success custom" data-toggle="tooltip" data-placement="auto"
+                <button type="button" class="ui inverted yellow button" data-toggle="tooltip" data-placement="auto"
                         title="Click to save your work" onclick="saveWorkspace()">Save
                     <i class="fa fa-save 2x"></i></button>
             </div>
 
             <div class="runbutton">
-                <button type="button" class="btn btn-success custom" onclick="loadWorkspace()" data-toggle="tooltip" data-placement="auto"
+                <button type="button" class="ui inverted yellow button" onclick="loadWorkspace()" data-toggle="tooltip" data-placement="auto"
                         title="Click on Restore, if you saved your blocks before">Restore
                     <i class="fa fa-download"></i></button>
             </div>
 
+                 <div class="runbutton">
+                     <a href="/dashboard" > <button class="ui inverted yellow button" href="/dashboard" data-toggle="tooltip" data-placement="auto"
+                                                    title="Make sure to save your work before leaving!">Back to dashboard
+                         <i class="fa fa-backward"></i></button>
+                     </a>
+                 </div>
+
             <!--canvas -->
-            <canvas id="myCanvas" width="600" height="300" style="border:1px solid #000000;"> </canvas>
+            <canvas id="myCanvas" width="600" height="300" style="border:1px solid #000000; margin-left: 20px"> </canvas>
         </div>
+        </div>
+
         <br/>
 
         <!-- Blockly Div -->
         <div id="wrapper">
-            <div id="blocklyDiv" style="height: 300px; width: 600px;"></div>
+            <div id="blocklyDiv" style="height: 300px; width: 600px; margin-left: 80px"></div>
             <br>
         </div>
 
@@ -105,12 +120,12 @@
             <div id="dropContent">
                 <div id="dropClose">X</div>
                 <div> <img src="Blockly/logo.png" width= "160px" height= "100px" style="margin-left: 200px">  </div>
-                <p style="font-family: Verdana, sans-serif; text-align: center">Well Done! You are on level two! </p>
+                <p style="font-family: Verdana, sans-serif; text-align: center">Half way through!</p>
                 <div>
-                    <p style="font-family: Verdana, sans-serif; text-align: center"> Lets draw a circle and color it red! </p>
-                    <p style="font-family: Verdana, sans-serif; text-align: center"> To change the color of the Circle, we use CSS </p>
-                    <p style="font-family: Verdana, sans-serif;text-align: center ">CSS can change the way how things look on our page! Lets try it!</p>
-                    <img src="https://media.giphy.com/media/Bn6djQ6MgEWZi/giphy.gif" width= "160px" height= "160px" style="margin-left: 200px; margin-bottom: 30px" >
+                    <p style="font-family: Verdana, sans-serif; text-align: center"> Let's draw set of traffic lights on the canvas. </p>
+                    <p style="font-family: Verdana, sans-serif; text-align: center"> I have already given you an outline, just create a similar replica with 3 circles - one with red colour, one with yellow and one with green </p>
+                    <p style="font-family: Verdana, sans-serif;text-align: center ">Create a rectangle as well behind the circles.</p>
+                    <img src="https://media.giphy.com/media/3o7bua93rLAc56NEOc/giphy.gif" width= "160px" height= "160px" style="margin-left: 200px; margin-bottom: 30px" >
 
                     <div><p> PS. If you are stuck click on Hint!</p></div>
                 </div>
@@ -264,7 +279,7 @@
     }
 
     function next() {
-            window.location.href="trafficLightsFunction.html";
+            window.location.href="/blockly/9";
     }
 
     function saveWorkspace() {

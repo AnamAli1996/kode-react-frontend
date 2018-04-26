@@ -6,11 +6,6 @@ export default function user(state = {}, action = {}) {
             return action.user;
         case USER_LOGGED_OUT:
             return {};
-        case "GET_PAGE":
-            return {
-                ...state,
-                progress: action.page
-            };
         default:
             return state;
     }

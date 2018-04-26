@@ -7,6 +7,9 @@
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -28,20 +31,23 @@
 <!-- nav -->
 <nav class="nav">
     <div style="display:table-cell; vertical-align:middle; text-align:center">
-        <img src="Blockly/logo.png" width= "160px" height= "100px" >
+        <a href="/" class="ui medium image">
+            <img src="Blockly/logo.png" width= "160px" height= "100px" >
+        </a>
     </div>
 </nav>
 
 <!-- instructions -->
-<div id= "alert" class="alert alert-primary" role="alert" style="width: 700px; margin-left: 500px;">
-    <p><img src="https://media.giphy.com/media/3ohhwBfx3ik9jIVTOM/giphy.gif"  style="width: 30px; height: 30px;" >Create a variable by clicking on the Variable category.</p>
-    <p><img src="https://media.giphy.com/media/3ohhwBfx3ik9jIVTOM/giphy.gif"  style="width: 30px; height: 30px;" >Drag set Variable block from the Variable category.</p>
-    <p><img src="https://media.giphy.com/media/3ohhwBfx3ik9jIVTOM/giphy.gif"  style="width: 30px; height: 30px;" >Drag the empty text box from the Text category and place it with the set Name.</p>
-    <p><img src="https://media.giphy.com/media/3ohhwBfx3ik9jIVTOM/giphy.gif"  style="width: 30px; height: 30px;" >Give the cartoon a name of your choice.</p>
+<div id= "alert" class="ui pointing below yellow basic label" role="alert" style="width: 700px; margin-left: 600px;">
+    <p style="color: black"><img src="https://media.giphy.com/media/3ohhwBfx3ik9jIVTOM/giphy.gif"  style="width: 30px; height: 30px;" >Create a variable by clicking on the Variable category.</p>
+    <p style="color: black"><img src="https://media.giphy.com/media/3ohhwBfx3ik9jIVTOM/giphy.gif"  style="width: 30px; height: 30px;" >Drag set Variable block from the Variable category.</p>
+    <p style="color: black"><img src="https://media.giphy.com/media/3ohhwBfx3ik9jIVTOM/giphy.gif"  style="width: 30px; height: 30px;" >Drag the empty text box from the Text category and place it with the set Name.</p>
+    <p style="color: black"><img src="https://media.giphy.com/media/3ohhwBfx3ik9jIVTOM/giphy.gif"  style="width: 30px; height: 30px;" >Give the cartoon a name of your choice.</p>
+    <p style="color: black"><img src="https://media.giphy.com/media/3ohhwBfx3ik9jIVTOM/giphy.gif"  style="width: 30px; height: 30px;" >Drag print block from text category and attach your variable name to it.</p>
 </div>
 
-<div id= "nextalert" class="alert alert-danger collapse" role="alert">
-    You haven't entered your name yet!
+<div id= "nextalert" class="ui pointing below red basic label" role="alert">
+    You haven't created a variable yet!
 </div>
 
 <div id="dropElem">
@@ -55,7 +61,7 @@
             <p style="font-family: Verdana, sans-serif;text-align: center ">What's a variable though?</p>
             <p style="font-family: Verdana, sans-serif; text-align: center">Variables are name that hold values'</p>
             <p style="font-family: Verdana, sans-serif; text-align: center">To give me a name, you can create a variable Name and then set it to whatever you want to call me.</p>
-            <img src="https://media.giphy.com/media/ITSaUjilz3Iwo/giphy.gif"  style="margin-left: 60px; margin-bottom: 30px" >
+            <img src="https://media.giphy.com/media/3oz8xyMwU7YPmX2rVC/giphy.gif"  style="margin-left: 60px; margin-bottom: 30px" >
 
             <p> PS. If you are stuck click on Hint!</p>
         </div>
@@ -65,38 +71,54 @@
 <div class="container">
     <div class="row">
         <div class="col-sm">
+            <div class="ui vertical buttons">
             <!-- Buttons -->
             <div class="runbutton">
-                <button type="button" class="btn btn-success custom" data-toggle="tooltip" data-placement="auto"
-                        title="Drag the Blocks from the logic section and see how many steps does it take the cat to reach it's food!" >Hint
+                <button type="button" class="ui inverted yellow button" data-toggle="tooltip" data-placement="auto"
+                        title="Create a variable and give the little character a name!" >Hint
                     <i class="fa fa-question"></i></button>
             </div>
 
             <div class="runbutton">
-                <button type="button" class="btn btn-success custom"
+                <button type="button" class="ui inverted yellow button"
                         onclick="runCode()">
                     Run <i class="fa fa-play-circle"></i></i>
                 </button>
             </div>
 
             <div class="runbutton">
-                <button type="button" class="btn btn-success custom" onclick="next()">
+                <button type="button" class="ui inverted yellow button" onclick="next()">
                     Next <i class="fa fa-forward"></i></button>
             </div>
 
             <div class="runbutton">
-                <button type="button" class="btn btn-success custom" data-toggle="tooltip" data-placement="auto"
+                <button type="button" class="ui inverted yellow button" data-toggle="tooltip" data-placement="auto"
                         title="Click to save your work" onclick="saveWorkspace()">Save
                     <i class="fa fa-save 2x"></i></button>
             </div>
 
             <div class="runbutton">
-                <button type="button" class="btn btn-success custom" onclick="loadWorkspace()" data-toggle="tooltip" data-placement="auto"
+                <button type="button" class="ui inverted yellow button" onclick="loadWorkspace()" data-toggle="tooltip" data-placement="auto"
                         title="Click on Restore, if you saved your blocks before">Restore
                     <i class="fa fa-download"></i></button>
             </div>
+
+                <div class="runbutton">
+                    <a href="/dashboard">
+                        <button class="ui inverted yellow button" href="/dashboard" data-toggle="tooltip"
+                                data-placement="auto"
+                                title="Make sure to save your work before leaving!">Back to dashboard
+                            <i class="fa fa-backward"></i></button>
+                    </a>
+                </div>
         </div>
-        <div id="blocklyDiv" style="height: 300px; width: 600px; margin-right: 200px"></div>
+    </div>
+        <div id="wrapper">
+            <div id="blocklyDiv" style="height: 300px; width: 600px;"></div>
+            <br>
+        </div>
+
+
     </div>
 </div>
 
@@ -134,17 +156,29 @@
         var code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
         Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
         console.log(code);
-        bootbox.alert({
-            message: "<p> Let's see the lines of code you have written! </p>" +
-            "<p> If you are happy with it, then press next. </p>" +
-            "<p> Otherwise you can play around with it. In this code you can see what is the name you have given to the cartoon. </p>" +
-            "<p>" + code + "</p>" + " <img src=\"https://media.giphy.com/media/ITSaUjilz3Iwo/giphy.gif\"  style=\"margin-bottom: 30px\" >" +
+        if (code !== "") {
+            bootbox.alert({
+                message: "<p> Let's see the lines of code you have written! </p>" +
+                "<p> If you are happy with it, then press next. </p>" +
+                "<p> Otherwise you can play around with it. In this code you can see what is the name you have given to the cartoon. </p>" +
+                "<p>" + code + "</p>" + " <img src=\"https://media.giphy.com/media/3oz8xyMwU7YPmX2rVC/giphy.gif\"  style=\"margin-bottom: 30px\" >" +
                 "<p> Thank for giving me a name! </p>"
-        });
+            });
+        }else {
+            $('#nextalert').show();
+            $('#alert').hide();
+        }
     }
 
     function next() {
-       window.location.href="integers.html";
+        var code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+        if(code === "") {
+            $('#nextalert').show();
+            $('#alert').hide();
+        }else{
+            window.location.href = "/blockly/13";
+        }
+
     }
 
     function saveWorkspace() {

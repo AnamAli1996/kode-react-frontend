@@ -28,9 +28,6 @@
 <body>
 <xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">
     <category name="Logic">
-        <block type="variables_set">
-            <field name="VAR" id="-tufM==I:?]w%XV-iK*x" variabletype="">Fruits</field>
-        </block>
         <block type="lists_create_with">
             <mutation items="3"></mutation>
         </block>
@@ -38,9 +35,6 @@
             <field name="TEXT"></field>
         </block>
         <block type="text_print"></block>
-        <block type="variables_get">
-            <field name="VAR" id="-tufM==I:?]w%XV-iK*x" variabletype="">Fruits</field>
-        </block>
     </category>
     <category name="Variables" colour="#A65C81" custom="VARIABLE"></category>
 </xml>
@@ -55,11 +49,13 @@
 
 
 
-<div class="ui pointing below yellow basic label" style="margin-left: 800px; margin-bottom: 20px" id="alert">
-    <p style="color: black">
-        <img src="Blockly/world.png" width="30px" height="30px"/>
-        Try to display "Hello World"
-    </p>
+<div id= "alert" class="ui pointing below yellow basic label" role="alert" style="width: 700px; margin-left: 750px;">
+    <p style="color: black"><img src="https://media.giphy.com/media/3ohhwBfx3ik9jIVTOM/giphy.gif"  style="width: 30px; height: 30px;" >First Create a Variable by clicking on 'Create Variable' from the variable category</p>
+    <p style="color: black"><img src="https://media.giphy.com/media/3ohhwBfx3ik9jIVTOM/giphy.gif"  style="width: 30px; height: 30px;" >Create a Fruit variable.</p>
+    <p style="color: black"><img src="https://media.giphy.com/media/3ohhwBfx3ik9jIVTOM/giphy.gif"  style="width: 30px; height: 30px;" >Drag the 'create list with' block on the workspace </p>
+    <p style="color: black"><img src="https://media.giphy.com/media/3ohhwBfx3ik9jIVTOM/giphy.gif"  style="width: 30px; height: 30px;" >Add three fruits to the list: Apple, Orange and Banana</p>
+    <p style="color: black"><img src="https://media.giphy.com/media/3ohhwBfx3ik9jIVTOM/giphy.gif"  style="width: 30px; height: 30px;" >Now set the Variable Fruits to the list.</p>
+    <p style="color: black"><img src="https://media.giphy.com/media/3ohhwBfx3ik9jIVTOM/giphy.gif"  style="width: 30px; height: 30px;" >Now print the variable fruit</p>
 </div>
 
 <div class="ui pointing below green basic label" style="margin-left: 800px; margin-bottom: 20px" id="nextalert">
@@ -71,7 +67,7 @@
 
 <div class="ui pointing below red basic label" style="margin-left: 800px; margin-bottom: 20px" id="wrong" >
     <p style="color: black">
-        Oops! Have you written 'Hello World' yet?
+        Have you created the variable yet?
     </p>
 </div>
 
@@ -84,7 +80,7 @@
                 <div class="runbutton">
 
                     <button class="ui inverted yellow button" data-toggle="tooltip" data-placement="auto"
-                            title="Write 'Hello World' where 'Don't Panic' is written" >Hint
+                            title="Make sure you have written the fruit names in order!" >Hint
                         <i class="fa fa-question"></i></button>
                 </div>
 
@@ -112,6 +108,12 @@
                             title="Click on Restore, if you saved your blocks before">Restore
                         <i class="fa fa-download"></i></button>
                 </div>
+                <div class="runbutton">
+                    <a href="/dashboard" > <button class="ui inverted yellow button" href="/dashboard" data-toggle="tooltip" data-placement="auto"
+                                                   title="Make sure to save your work before leaving!">Back to dashboard
+                        <i class="fa fa-backward"></i></button>
+                    </a>
+                </div>
 
                 <div>
                     <img class="ui medium circular image" src="https://media.giphy.com/media/4NrK8grfVOOUVyW6Na/giphy.gif" id="apple" style="width: 100px; height: 100px; display: none" data-title="Hello World">
@@ -138,21 +140,18 @@
         <div id="wrapper">
             <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
             <br>
-            <form id="paper" method="get" action="">
-                <textarea id="text" name="text" rows="10" style="overflow: hidden; word-wrap: break-word; margin-right: 00px; resize: none; width: 600px; height: 200px; "></textarea>
-            </form>
         </div>
 
         <div id="dropElem">
             <div id="dropContent">
                 <div id="dropClose">X</div>
                 <div> <img src="Blockly/logo.png" width= "160px" height= "100px" style="margin-left: 200px">  </div>
-                <p style="font-family: Verdana, sans-serif; text-align: center">Hello and Welcome to Blockly! </p>
+                <p style="font-family: Verdana, sans-serif; text-align: center">Ready for your last exercise? </p>
                 <div>
-                    <p style="font-family: Verdana, sans-serif; text-align: center"> Today we will start learning code by using Blocks! </p>
-                    <p style="font-family: Verdana, sans-serif; text-align: center"> Blockly uses visual blocks that you can drag and drop to write programs! Under the hood, you are still creating code! </p>
-                    <p style="font-family: Verdana, sans-serif;text-align: center ">Lets begin by displaying Hello World on the screen!</p>
-                    <img src="https://media.giphy.com/media/xT9IggfHyknam374Ig/giphy.gif" width= "160px" height= "100px" style="margin-left: 200px; margin-bottom: 30px" >
+                    <p style="font-family: Verdana, sans-serif; text-align: center"> Lists hold a lot of same types of objects in one place </p>
+                    <p style="font-family: Verdana, sans-serif; text-align: center">Here we will create a Fruit List that holds banana, orange and apples. </p>
+                    <p style="font-family: Verdana, sans-serif;text-align: center ">Use variables to create Fruit variable and create Strings of fruit names</p>
+                    <img src="https://media.giphy.com/media/3ov9k8N1DG5WiZ9CSc/giphy.gif" width= "300px" height= "300px" style="margin-left: 100px; margin-bottom: 30px" >
 
                     <p> PS. If you are stuck click on Hint!</p>
                 </div>
@@ -177,35 +176,36 @@
             'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
         var code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
         console.log(code);
-        if(code === "var Fruits;\n" +
+        if(code === "var Fruit;\n" +
             "\n" +
             "\n" +
-            "Fruits = ['Apple', 'Oranges', 'Bananas'];\n" +
-            "window.alert(Fruits);\n"){
+            "Fruit = ['Apple', 'Orange', 'Banana'];\n" +
+            "window.alert(Fruit);\n"){
             document.getElementById("apple").style.display = "block";
             document.getElementById("banana").style.display = "block";
             document.getElementById("orange").style.display = "block";
+            $('#nextalert').show();
+            $('#alert').hide();
         }
     }
 
     function next() {
         var Jscode = Blockly.JavaScript.workspaceToCode(demoWorkspace);
-        if(Jscode === 'if (6 * 7 == 42) {\n' +
-            '  window.alert(\'Hello World\');\n' +
-            '} else {\n' +
-            '  window.alert(\'Panic\');\n' +
-            '}\n'){window.location.href="/course/6";}
+        if(Jscode === "var Fruit;\n" +
+            "\n" +
+            "\n" +
+            "Fruit = ['Apple', 'Orange', 'Banana'];\n" +
+            "window.alert(Fruit);\n"){
+            $('#nextalert').show();
+            $('#alert').hide();
+            $('#wrong').hide();
+            window.location.href="/end.html";
+        }
         else {
             $('#wrong').show();
         }
     }
 
-
-    function myUpdateFunction(event) {
-        var Jscode = Blockly.JavaScript.workspaceToCode(demoWorkspace);
-        document.getElementById('text').value = Jscode;
-
-    }
 
     function saveWorkspace() {
         var xmlDom = Blockly.Xml.workspaceToDom(Blockly.mainWorkspace);

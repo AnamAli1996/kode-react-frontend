@@ -11,7 +11,9 @@ class SignupForm extends React.Component {
             lastName: "",
             age: "",
             email: "",
-            password: ""
+            parentsEmail: "",
+            password: "",
+            blockly_id: ""
 
         },
         loading: false,
@@ -41,11 +43,12 @@ class SignupForm extends React.Component {
 
     validate = data => {
         const errors = {};
-        if (!data.firstName) errors.firstName = "Cant be blank";
-        if (!data.lastName) errors.lastName = "Cant be blank";
-        if (!data.age) errors.age = "Cant be blank";
-        if (!isEmail(data.email)) errors.email = "Invalid email";
-        if (!data.password) errors.password = "Can't be blank";
+        if (!data.firstName) errors.firstName = "Cant be blank, Please refresh the page and try again.";
+        if (!data.lastName) errors.lastName = "Cant be blank, Please refresh the page and try again.";
+        if (!data.age) errors.age = "Cant be blank, Please refresh the page and try again.";
+        if (!isEmail(data.email)) errors.email = "Invalid email, Please refresh the page and try again.";
+        if (!data.password) errors.password = "Can't be blank, Please refresh the page and try again.";
+        if (!data.parentsEmail) errors.parentsEmail = "Can't be blank, Please refresh the page and try again.";
 
 
         return errors;
@@ -129,6 +132,19 @@ class SignupForm extends React.Component {
                                 >
                                     {errors.email && <InlineError text={errors.email}/>}
                                 </Form.Input>
+                                <Form.Input error={!!errors.parentsEmail}
+                                            type="email"
+                                            id="parentsEmail"
+                                            name="parentsEmail"
+                                            value={data.parentsEmail}
+                                            onChange={this.onChange}
+                                            fluid
+                                            icon='user'
+                                            iconPosition='left'
+                                            placeholder='Parents e-mail address'
+                                >
+                                    {errors.parentsEmail && <InlineError text={errors.parentsEmail}/>}
+                                </Form.Input>
                                 <Form.Input error={!!errors.password}
                                             type="password"
                                             fluid
@@ -159,6 +175,13 @@ class SignupForm extends React.Component {
                         </Form>
                         <Message color='yellow'>
                             Already have an account? <a style={{color: "blue"}} href='/login'>Sign In</a>
+                        </Message>
+
+                        <Message info>
+                            <Message.Header>Terms and Conditions</Message.Header>
+                            <p>I agree to be bound by the Kode terms of service. If I am under 13 years of age, I confirm by submitting this form that I have my parent or legal guardian's permission to use the Kode services.
+
+                                Email addresses are not stored in a form that allows us to contact students. Students will never recieve emails from Kode.</p>
                         </Message>
 
                     </Grid.Column>

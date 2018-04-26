@@ -17,6 +17,16 @@ import PageFour from "./components/pages/Blockly/pageFour";
 import PageFive from "./components/pages/Blockly/pageFive";
 import PageSix from "./components/pages/Blockly/pageSix";
 import PageSeven from "./components/pages/Blockly/pageSeven";
+import PageEight from "./components/pages/Blockly/pageEight";
+import PageNine from "./components/pages/Blockly/pageNine";
+import PageTen from "./components/pages/Blockly/pageTen";
+import PageEleven from "./components/pages/Blockly/pageEleven";
+import PageTwelve from "./components/pages/Blockly/pageTwelve";
+import PageThirteen from "./components/pages/Blockly/pageThirteen";
+import PageFourteen from "./components/pages/Blockly/pageFourteen";
+
+
+
 const App = ({location}) => (
             <div>
                 <div className="container">
@@ -62,7 +72,34 @@ const App = ({location}) => (
                         path="/blockly/7"
                         exact component={PageSeven}
                     />
-
+                    <Route
+                        path="/blockly/8"
+                        exact component={PageEight}
+                    />
+                    <Route
+                        path="/blockly/9"
+                        exact component={PageNine}
+                    />
+                    <Route
+                        path="/blockly/10"
+                        exact component={PageTen}
+                    />
+                    <Route
+                        path="/blockly/11"
+                        exact component={PageEleven}
+                    />
+                    <Route
+                        path="/blockly/12"
+                        exact component={PageTwelve}
+                    />
+                    <Route
+                        path="/blockly/13"
+                        exact component={PageThirteen}
+                    />
+                    <Route
+                        path="/blockly/14"
+                        exact component={PageFourteen}
+                    />
                     <GuestRoute
                         location={location}
                         path="/login"

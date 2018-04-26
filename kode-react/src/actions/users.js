@@ -1,5 +1,3 @@
-import api from "../api";
-import {userLoggedIn} from "./auth";
 import axios from "axios"
 
 export function signup(userData) {

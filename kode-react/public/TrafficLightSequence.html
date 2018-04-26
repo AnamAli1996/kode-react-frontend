@@ -6,6 +6,9 @@
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
@@ -44,58 +47,86 @@
 <!-- nav -->
 <nav class="nav">
     <div style="display:table-cell; vertical-align:middle; text-align:center">
-        <img src="Blockly/logo.png" width= "160px" height= "100px" >
+        <a href="/" class="ui medium image">
+            <img src="Blockly/logo.png" width="160px" height="100px">
+        </a>
     </div>
 </nav>
 
 <!-- instructions -->
-<div id= "alert" class="alert alert-primary" role="alert">
-    <img src="https://media.giphy.com/media/11j83b6mlIpWdq/giphy.gif" width= "30px" height= "30px" >
-    Lets create a traffic light!
-    Read instructions for more details.
+<div id="alert" class="ui pointing below yellow basic label" role="alert">
+    <img src="https://media.giphy.com/media/11j83b6mlIpWdq/giphy.gif" width="30px" height="30px">
+    Next step is to give some commands to the traffic light! Execute the pattern by clicking the pattern button at the
+    side.
+</div>
+
+<div class="ui pointing below red basic label" style="margin-left: 800px; margin-bottom: 20px" id="wrong">
+    <p style="color: black">
+        Are you sure you have followed the pattern?
+    </p>
 </div>
 
 <!-- container -->
 <div class="container">
     <div class="row">
         <div class="col-sm">
+            <div class="ui vertical buttons">
+                <!-- Buttons -->
+                <div class="runbutton">
+                    <button type="button" class="ui inverted yellow button" data-toggle="tooltip" data-placement="auto"
+                            title="Drag the Block from the logic section and click on run to see what happens! Make sure to click on off before proceeding to Next!">
+                        Hint
+                        <i class="fa fa-question"></i></button>
+                </div>
 
-            <!-- Buttons -->
-            <div class="runbutton">
-                <button type="button" class="btn btn-success custom" data-toggle="tooltip" data-placement="auto"
-                        title="Drag the Block from the logic section and click on run to see what happens! Make sure to click on off before proceeding to Next!" >Hint
-                    <i class="fa fa-question"></i></button>
-            </div>
+                <div class="runbutton">
+                    <button type="button" class="ui inverted yellow button"
+                            onclick="showPattern()">
+                        Pattern <i class="fa fa-search-plus"></i></i>
+                    </button>
+                </div>
 
-            <div class="runbutton">
-                <button type="button" class="btn btn-success custom"
-                        onclick="runCode()">
-                    Run <i class="fa fa-play-circle"></i></i>
-                </button>
-            </div>
+                <div class="runbutton">
+                    <button type="button" class="ui inverted yellow button"
+                            onclick="runCode()">
+                        Run <i class="fa fa-play-circle"></i></i>
+                    </button>
+                </div>
 
-            <div class="runbutton">
-                <button type="button" id = runButton class="btn btn-success custom" onclick="next()">
-                    Next <i class="fa fa-forward"></i></button>
-            </div>
+                <div class="runbutton">
+                    <button type="button" id=runButton class="ui inverted yellow button" onclick="next()">
+                        Next <i class="fa fa-forward"></i></button>
+                </div>
 
-            <div class="runbutton">
-                <button type="button" class="btn btn-success custom" data-toggle="tooltip" data-placement="auto"
-                        title="Click to save your work" onclick="saveWorkspace()">Save
-                    <i class="fa fa-save 2x"></i></button>
-            </div>
+                <div class="runbutton">
+                    <button type="button" class="ui inverted yellow button" data-toggle="tooltip" data-placement="auto"
+                            title="Click to save your work" onclick="saveWorkspace()">Save
+                        <i class="fa fa-save 2x"></i></button>
+                </div>
 
-            <div class="runbutton">
-                <button type="button" class="btn btn-success custom" onclick="loadWorkspace()" data-toggle="tooltip" data-placement="auto"
-                        title="Click on Restore, if you saved your blocks before">Restore
-                    <i class="fa fa-download"></i></button>
-            </div>
+                <div class="runbutton">
+                    <button type="button" class="ui inverted yellow button" onclick="loadWorkspace()"
+                            data-toggle="tooltip" data-placement="auto"
+                            title="Click on Restore, if you saved your blocks before">Restore
+                        <i class="fa fa-download"></i></button>
+                </div>
 
-            <!--canvas -->
+                <div class="runbutton">
+                    <a href="/dashboard">
+                        <button class="ui inverted yellow button" href="/dashboard" data-toggle="tooltip"
+                                data-placement="auto"
+                                title="Make sure to save your work before leaving!">Back to dashboard
+                            <i class="fa fa-backward"></i></button>
+                    </a>
+                </div>
+
+
+                <!--canvas -->
                 <div id="TrafficCircle1"></div>
                 <div id="TrafficCircle2"></div>
                 <div id="TrafficCircle3"></div>
                 <div id="TrafficRectangle"></div>
+            </div>
         </div>
         <br/>
 
@@ -109,13 +140,17 @@
         <div id="dropElem">
             <div id="dropContent">
                 <div id="dropClose">X</div>
-                <div> <img src="Blockly/logo.png" width= "160px" height= "100px" style="margin-left: 200px">  </div>
-                <p style="font-family: Verdana, sans-serif; text-align: center">Well Done! You are on level two! </p>
+                <div><img src="Blockly/logo.png" width="160px" height="100px" style="margin-left: 200px"></div>
+                <p style="font-family: Verdana, sans-serif; text-align: center"> Traffic Lights part 2 </p>
                 <div>
-                    <p style="font-family: Verdana, sans-serif; text-align: center"> Lets draw a circle and color it red! </p>
-                    <p style="font-family: Verdana, sans-serif; text-align: center"> To change the color of the Circle, we use CSS </p>
-                    <p style="font-family: Verdana, sans-serif;text-align: center ">CSS can change the way how things look on our page! Lets try it!</p>
-                    <img src="https://media.giphy.com/media/Bn6djQ6MgEWZi/giphy.gif" width= "160px" height= "160px" style="margin-left: 200px; margin-bottom: 30px" >
+                    <p style="font-family: Verdana, sans-serif; text-align: center"> Lets draw a circle and color it
+                        red! </p>
+                    <p style="font-family: Verdana, sans-serif; text-align: center"> To change the color of the Circle,
+                        we use CSS </p>
+                    <p style="font-family: Verdana, sans-serif;text-align: center ">CSS can change the way how things
+                        look on our page! Lets try it!</p>
+                    <img src="https://media.giphy.com/media/Bn6djQ6MgEWZi/giphy.gif" width="160px" height="160px"
+                         style="margin-left: 200px; margin-bottom: 30px">
 
                     <div><p> PS. If you are stuck click on Hint!</p></div>
                 </div>
@@ -135,7 +170,7 @@
 
     //Block definitions
     Blockly.Blocks['yellowoff'] = {
-        init: function() {
+        init: function () {
             this.appendDummyInput()
                 .appendField("Turn Yellow Off");
             this.setPreviousStatement(true, null);
@@ -146,8 +181,21 @@
         }
     };
 
+    Blockly.Blocks['yellowon'] = {
+        init: function () {
+            this.appendDummyInput()
+                .appendField("Turn Yellow On");
+            this.setPreviousStatement(true, null);
+            this.setNextStatement(true, null);
+            this.setColour(65);
+            this.setTooltip("");
+            this.setHelpUrl("");
+        }
+    };
+
+
     Blockly.Blocks['wait'] = {
-        init: function() {
+        init: function () {
             this.appendDummyInput()
                 .appendField("wait 10 seconds");
             this.setPreviousStatement(true, null);
@@ -159,7 +207,7 @@
     };
 
     Blockly.Blocks['red'] = {
-        init: function() {
+        init: function () {
             this.appendDummyInput()
                 .appendField("Turn red on");
             this.setInputsInline(false);
@@ -172,7 +220,7 @@
     };
 
     Blockly.Blocks['redoff'] = {
-        init: function() {
+        init: function () {
             this.appendDummyInput()
                 .appendField("Turn Red Off");
             this.setPreviousStatement(true, null);
@@ -184,7 +232,7 @@
     };
 
     Blockly.Blocks['greenon'] = {
-        init: function() {
+        init: function () {
             this.appendDummyInput()
                 .appendField("Turn Green On");
             this.setPreviousStatement(true, null);
@@ -196,7 +244,7 @@
     };
 
     Blockly.Blocks['greenoff'] = {
-        init: function() {
+        init: function () {
             this.appendDummyInput()
                 .appendField("Turn Green Off");
             this.setPreviousStatement(true, null);
@@ -208,70 +256,70 @@
     };
 
     //Block function definition
-    Blockly.JavaScript['red'] = function(block) {
+    Blockly.JavaScript['red'] = function (block) {
         var color = 'red';
         var code = 'red(' + color + ')\n';
         return code;
     };
 
-    
 
-    Blockly.JavaScript['redoff'] = function(block) {
+    Blockly.JavaScript['redoff'] = function (block) {
         var color = 'red';
         var code = 'redoff(' + color + ')\n';
         return code;
     };
 
 
-    Blockly.JavaScript['greenon'] = function(block) {
+    Blockly.JavaScript['greenon'] = function (block) {
         var color = 'red';
         var code = 'greenon(' + color + ')\n';
         return code;
     };
 
-    Blockly.JavaScript['greenoff'] = function(block) {
+    Blockly.JavaScript['greenoff'] = function (block) {
         var color = 'red';
         var code = 'greenoff(' + color + ')\n';
         return code;
     };
 
 
-    Blockly.JavaScript['yellowon'] = function(block) {
+    Blockly.JavaScript['yellowon'] = function (block) {
         var color = 'red';
         var code = 'yellowon(' + color + ')\n';
         return code;
     };
 
 
-    Blockly.JavaScript['yellowoff'] = function(block) {
+    Blockly.JavaScript['yellowoff'] = function (block) {
         var color = 'red';
         var code = 'yellowoff(' + color + ')\n';
         return code;
     };
 
-    Blockly.JavaScript['wait'] = function(block) {
+    Blockly.JavaScript['wait'] = function (block) {
         // TODO: Assemble JavaScript into code variable.
         var seconds = 5;
         var code = 'wait(' + seconds + ');\n';
         return code;
     };
 
-    
+
     //Interpreter code
     function initApi(interpreter, scope) {
-        //wait
-        initInterpreterWaitForSeconds(interpreter, scope);
 
         //red
-        var wrapper = function(text) {
+        var wrapper = function (text) {
             text = text ? text.toString() : '';
             return interpreter.createPrimitive(red(text));
         };
         interpreter.setProperty(scope, 'red',
             interpreter.createNativeFunction(wrapper));
 
+        //wait
+        initInterpreterWaitForSeconds(interpreter, scope);
+
         //off
-         wrapper = function(text) {
+        wrapper = function (text) {
             text = text ? text.toString() : '';
             return interpreter.createPrimitive(redoff(text));
         };
@@ -279,7 +327,7 @@
             interpreter.createNativeFunction(wrapper));
 
         //green
-        wrapper = function(text) {
+        wrapper = function (text) {
             text = text ? text.toString() : '';
             return interpreter.createPrimitive(greenon(text));
         };
@@ -287,7 +335,7 @@
             interpreter.createNativeFunction(wrapper));
 
         //off
-        wrapper = function(text) {
+        wrapper = function (text) {
             text = text ? text.toString() : '';
             return interpreter.createPrimitive(greenoff(text));
         };
@@ -295,14 +343,14 @@
             interpreter.createNativeFunction(wrapper));
 
         //yellow
-        wrapper = function(text) {
+        wrapper = function (text) {
             text = text ? text.toString() : '';
             return interpreter.createPrimitive(yellowon(text));
         };
         interpreter.setProperty(scope, 'yellowon',
             interpreter.createNativeFunction(wrapper));
         //off
-        wrapper = function(text) {
+        wrapper = function (text) {
             text = text ? text.toString() : '';
             return interpreter.createPrimitive(yellowoff(text));
         };
@@ -311,7 +359,7 @@
 
 
         //highlight block
-            wrapper = function (id) {
+        wrapper = function (id) {
             id = id ? id.toString() : '';
             return interpreter.createPrimitive(highlightBlock(id))
         };
@@ -334,7 +382,7 @@
     }
 
     function redoff(text) {
-        document.getElementById('TrafficCircle1').style.backgroundColor = '#fff' ;
+        document.getElementById('TrafficCircle1').style.backgroundColor = '#fff';
 
     }
 
@@ -344,7 +392,7 @@
     }
 
     function greenoff(text) {
-        document.getElementById('TrafficCircle3').style.backgroundColor = '#fff' ;
+        document.getElementById('TrafficCircle3').style.backgroundColor = '#fff';
 
     }
 
@@ -354,7 +402,7 @@
     }
 
     function yellowoff(text) {
-        document.getElementById('TrafficCircle2').style.backgroundColor = '#fff' ;
+        document.getElementById('TrafficCircle2').style.backgroundColor = '#fff';
 
     }
 
@@ -363,12 +411,14 @@
         highlightPause = false;
         runButton.disabled = '';
     }
+
     function generateCodeAndLoadIntoInterpreter() {
         Blockly.JavaScript.STATEMENT_PREFIX = 'highlightBlock(%1);\n';
         Blockly.JavaScript.addReservedWords('highlightBlock');
         latestCode = Blockly.JavaScript.workspaceToCode(demoWorkspace);
         resetStepUi(true);
     }
+
     function resetInterpreter() {
         myInterpreter = null;
         if (runner) {
@@ -376,19 +426,17 @@
             runner = null;
         }
     }
+
     function runCode() {
         if (!myInterpreter) {
             resetStepUi(true);
             runButton.disabled = 'disabled';
             // And then show generated code in an alert.
             // In a timeout to allow the outputArea.value to reset first.
-            setTimeout(function() {
-                alert('Ready to execute the following code\n' +
-                    '===================================\n' +
-                    latestCode);
+            setTimeout(function () {
                 highlightPause = false;
                 myInterpreter = new Interpreter(latestCode, initApi);
-                runner = function() {
+                runner = function () {
                     if (myInterpreter) {
                         var hasMore = myInterpreter.run();
                         if (hasMore) {
@@ -404,31 +452,46 @@
             return;
         }
     }
+
     generateCodeAndLoadIntoInterpreter();
-    demoWorkspace.addChangeListener(function(event) {
+    demoWorkspace.addChangeListener(function (event) {
         if (!(event instanceof Blockly.Events.Ui)) {
             resetInterpreter();
             generateCodeAndLoadIntoInterpreter();
         }
     });
 
-    
-    
-    //wait 
+
+    function showPattern() {
+        let instructions = "<p> Turn Red on</p>" + "<p> Wait 5 seconds </p>" + "<p> Turn Red Off </p>" + "<p>Turn Yellow On</p>" +
+            "<p>Wait 5 seconds</p>" + "<p>Turn Yellow Off</p>" + "<p> Turn Green on</p>" + "<p> Wait 5 seconds </p>" + " <p>Turn Green Off</p>";
+        bootbox.alert({
+            message: instructions
+        });
+    }
+
+    //wait
     function initInterpreterWaitForSeconds(interpreter, scope) {
         Blockly.JavaScript.addReservedWords('wait');
 
 
         var wrapper = interpreter.createAsyncFunction(
             function (timeInSeconds, callback) {
-                setTimeout(callback, timeInSeconds * 1000);
+                setTimeout(callback, timeInSeconds * 500);
             });
         interpreter.setProperty(scope, 'wait', wrapper);
     }
 
 
     function next() {
-        window.location.href="trafficLightsFunction.html";
+
+        if (latestCode !== "")
+            window.location.href = "/blockly/10";
+        else {
+            $('#wrong').show();
+            $('#alert').hide();
+
+        }
     }
 
     function saveWorkspace() {
@@ -445,7 +508,6 @@
             Blockly.Xml.domToWorkspace(Blockly.mainWorkspace, xmlDom);
         }
     }
-
 
 
 </script>

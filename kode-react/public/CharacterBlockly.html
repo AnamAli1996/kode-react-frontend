@@ -141,6 +141,7 @@
 
     function runCode(){
         window.LoopTrap = 1000;
+        console.log(localStorage.getItem("studentName"));
         Blockly.JavaScript.INFINITE_LOOP_TRAP =
             'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
         var code = Blockly.JavaScript.workspaceToCode(demoWorkspace);

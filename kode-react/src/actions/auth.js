@@ -1,6 +1,6 @@
 import { USER_LOGGED_IN, USER_LOGGED_OUT} from "../types";
 import api from "../api";
-import axios from "axios";
+
 
 export const userLoggedIn =(user) =>({
     type: USER_LOGGED_IN,
@@ -11,21 +11,43 @@ export const userLoggedOut = () => ({
     type: USER_LOGGED_OUT
 });
 
-export const getPage = (page) => ({
-    type: "GET_PAGE",
-    page: page
-});
-
-
-
-
 
 export const login = credentials => dispatch =>
     api.user.login(credentials).then(user => {
         localStorage.studentJWT = user.webToken;
         localStorage.studentName = user.firstName + " " + user.lastName;
         localStorage.studentId = user.id;
-        localStorage.studentProgress = "";
+        if(user.blockly_id === 1 || user.blockly_id === 0)
+            localStorage.studentProgress = "/Blockly.html";
+        else if(user.blockly_id === 2)
+            localStorage.studentProgress = "/CircleBlockly.html";
+        else if(user.blockly_id === 3)
+            localStorage.studentProgress = "/DrawBlockly.html";
+        else if(user.blockly_id === 4)
+            localStorage.studentProgress = "/CharacterBlockly.html";
+        else if(user.blockly_id === 5)
+            localStorage.studentProgress = "/pokemon.html";
+        else if(user.blockly_id === 6)
+            localStorage.studentProgress = "/Loops.html";
+        else if(user.blockly_id === 7)
+            localStorage.studentProgress = "/integers.html";
+        else if(user.blockly_id === 8)
+            localStorage.studentProgress = "/TrafficLights.html";
+        else if(user.blockly_id === 9)
+            localStorage.studentProgress = "/TrafficLightSequence.html";
+        else if(user.blockly_id === 10)
+            localStorage.studentProgress = "/TrafficLightRepeat.html";
+        else if(user.blockly_id === 11)
+            localStorage.studentProgress = "/Strings.html";
+        else if(user.blockly_id === 12)
+            localStorage.studentProgress = "/Variables.html";
+        else if(user.blockly_id === 13)
+            localStorage.studentProgress = "/ifStatements.html";
+        else if(user.blockly_id === 14)
+            localStorage.studentProgress = "/List.html";
+
+
+
         dispatch(userLoggedIn(user));
     });
 
@@ -36,10 +58,3 @@ export const logout = () => dispatch => {
     dispatch(userLoggedOut());
 };
 
-export const getPage1 = () => dispatch => {
-    let studentId = localStorage.getItem("studentId");
-    let apiUrl = "http://localhost:8080/api/Student/" + studentId + "/showPage";
-    axios.post(apiUrl).then(res => {
-        dispatch(getPage(res.data))
-    });
-};

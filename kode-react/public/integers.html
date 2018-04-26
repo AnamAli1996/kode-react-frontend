@@ -6,6 +6,9 @@
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
@@ -42,53 +45,62 @@
     </div>
 </nav>
 
-<div id="alert" class="alert alert-primary" role="alert" style="width: 1000px; margin-left: 500px;">
+<div id="alert" class="ui pointing below yellow basic label" role="alert" style="width: 1000px; margin-left: 500px;">
     <p><img src="https://media.giphy.com/media/3ohhwBfx3ik9jIVTOM/giphy.gif" style="width: 30px; height: 30px;">Move the
         number Block to the workspace and change the number from 0 to any number between 1 to 10 and hit run</p>
 </div>
 
-<div id="nextalert" class="alert alert-danger collapse" role="alert">
+<div id="nextalert" class="ui pointing below red basic label" role="alert">
     Are you sure your number is between 1 to 10?
 </div>
 
-<div id="wrong" class="alert alert-danger collapse" role="alert">
+<div id="wrong" class="ui pointing below red basic label" role="alert">
     Are you sure you have entered a number yet?
 </div>
 
 <div class="container">
     <div class="row">
         <div class="col-sm">
+            <div class="ui vertical buttons">
             <!-- Buttons -->
             <div class="runbutton">
-                <button type="button" class="btn btn-success custom" data-toggle="tooltip" data-placement="auto"
-                        title="Drag the Blocks from the logic section and see how many steps does it take the cat to reach it's food!">
+                <button type="button" class="ui inverted yellow button" data-toggle="tooltip" data-placement="auto"
+                        title="drag the blog and write a number between 1 to 10">
                     Hint
                     <i class="fa fa-question"></i></button>
             </div>
 
             <div class="runbutton">
-                <button type="button" class="btn btn-success custom"
-                        onclick="runCode()">
-                    Run <i class="fa fa-play-circle"></i></i>
+                <button type="button" class="ui inverted yellow button" data-toggle="tooltip" data-placement="auto"
+                        title="click run to see what's the result" onclick="runCode()">
+                    Run <i class="fa fa-play-circle"></i>
                 </button>
             </div>
 
             <div class="runbutton">
-                <button type="button" class="btn btn-success custom" onclick="next()">
+                <button type="button" class="ui inverted yellow button" onclick="next()">
                     Next <i class="fa fa-forward"></i></button>
             </div>
 
             <div class="runbutton">
-                <button type="button" class="btn btn-success custom" data-toggle="tooltip" data-placement="auto"
+                <button type="button" class="ui inverted yellow button" data-toggle="tooltip" data-placement="auto"
                         title="Click to save your work" onclick="saveWorkspace()">Save
                     <i class="fa fa-save 2x"></i></button>
             </div>
 
             <div class="runbutton">
-                <button type="button" class="btn btn-success custom" onclick="loadWorkspace()" data-toggle="tooltip"
+                <button type="button" class="ui inverted yellow button" onclick="loadWorkspace()" data-toggle="tooltip"
                         data-placement="auto"
                         title="Click on Restore, if you saved your blocks before">Restore
                     <i class="fa fa-download"></i></button>
+            </div>
+
+                <div class="runbutton">
+                    <a href="/dashboard" > <button class="ui inverted yellow button" href="/dashboard" data-toggle="tooltip" data-placement="auto"
+                                                   title="Make sure to save your work before leaving!">Back to dashboard
+                        <i class="fa fa-backward"></i></button>
+                    </a>
+                </div>
             </div>
         </div>
         <div id="blocklyDiv" style="height: 300px; width: 600px; margin-right: 200px"></div>
@@ -112,7 +124,7 @@
                      style=" width: 50px; height: 50px; margin-left: 20px; margin-bottom: 30px">
                 <img src=https://media.giphy.com/media/xT9IgvyNbTQm8BFtRK/giphy.gif
                      style=" width: 50px; height: 50px; margin-left: 20px; margin-bottom: 30px">
-                <img src="https://media.giphy.com/media/uh086tuwf6Jr2/giphy.gif"
+                <img src="https://media.giphy.com/media/l3q2zuvPyBOxY71aE/giphy.gif"
                      style=" width: 50px; height: 50px; margin-left: 20px; margin-bottom: 30px">
                 <img src="https://media.giphy.com/media/3ohhwf7I8Z1ZtpeAhi/giphy.gif"
                      style=" width: 50px; height: 50px; margin-left: 20px; margin-bottom: 30px">
@@ -167,7 +179,7 @@
         } else if (res === 9) {
             url = "https://media.giphy.com/media/3ov9jJbGQuktIayru0/giphy.gif";
         } else if (res === 10) {
-            url = "https://media.giphy.com/media/e6LMsw8Rf5czK/giphy.gif";
+            url = "https://media.giphy.com/media/3owyp4dvirnziQhg08/giphy.gif";
         }
 
         if (Number.isInteger(res) && (res <= 10 && res >= 1)) {
@@ -175,14 +187,14 @@
                 message: "<p align='center'> Your Number is..... </p>" +
                 "<br/><p align='center'><img src='" + url + " '></p>" + "<p align='center'> Click next! </p>"
             });
-        } else if (res >= 10 || res <= 1) {
-            $('#nextalert').show();
-            $('#alert').hide();
-            $('#wrong').hide();
-        } else {
+        } else if (res > 10 || res < 1) {
+            $('#nextalert').hide();
             $('#alert').hide();
             $('#wrong').show();
-            $('#nextalert').hide();
+        } else {
+            $('#alert').hide();
+            $('#wrong').hide();
+            $('#nextalert').show();
         }
     }
 
@@ -190,16 +202,14 @@
         var code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
         code = code.substring(0, code.length - 1);
         let res = parseInt(code);
-        if (res >= 10 || res <= 1) {
-            window.location.href = "ifStatements.html";
-        } else if (res >= 10 || res <= 1) {
-            $('#nextalert').show();
+        if (res > 10 || res < 1) {
+            $('#wrong').show();
             $('#alert').hide();
-            $('#wrong').hide();
         } else {
             $('#alert').hide();
-            $('#wrong').show();
-            $('#nextalert').hide();
+            $('#wrong').hide();
+            $('#nextalert').show();
+            window.location.href="/blockly/8";
         }
     }
 
