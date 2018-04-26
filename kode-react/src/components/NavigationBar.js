@@ -20,7 +20,7 @@ const NavigationBar = ({isAuthenticated, logout} ) => (
                 <div className="navWide">
                     <div className="wideDiv">
                         <div>
-                             <a className="image-nav" href='#'> <img  src={image} style={styles} alt="my image"/></a>
+                             <a className="image-nav" href='/git '> <img  src={image} style={styles} alt="my image"/></a>
                         </div>
 
                         {isAuthenticated ? (
