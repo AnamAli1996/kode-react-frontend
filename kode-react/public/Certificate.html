@@ -19,6 +19,8 @@
     var name = localStorage.getItem("studentName");
     document.getElementById('name').innerHTML = name;
 
+    var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
     var date = new Date();
-    document.getElementById('date').innerHTML = date;
+    document.getElementById('date').innerHTML = date.getUTCDate() + "-" + months[date.getMonth()] + "-" + date.getUTCFullYear();
 </script>
